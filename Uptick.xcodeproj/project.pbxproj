@@ -7,21 +7,91 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		7A0EE6FA1E0C281C00C8830E /* ColorScheme.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A0EE6F91E0C281C00C8830E /* ColorScheme.swift */; };
 		7ADE87DD1E079DB100518A91 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7ADE87DC1E079DB100518A91 /* AppDelegate.swift */; };
-		7ADE87DF1E079DB100518A91 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7ADE87DE1E079DB100518A91 /* ViewController.swift */; };
 		7ADE87E21E079DB100518A91 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 7ADE87E01E079DB100518A91 /* Main.storyboard */; };
 		7ADE87E41E079DB100518A91 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 7ADE87E31E079DB100518A91 /* Assets.xcassets */; };
 		7ADE87E71E079DB100518A91 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 7ADE87E51E079DB100518A91 /* LaunchScreen.storyboard */; };
+		7AE19BF31E07A116009A6DF1 /* UIColor+HexColors.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7AE19BF21E07A116009A6DF1 /* UIColor+HexColors.swift */; };
+		7AE19BF51E07A14D009A6DF1 /* Font.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7AE19BF41E07A14D009A6DF1 /* Font.swift */; };
+		7AE19BFB1E07A275009A6DF1 /* Formatters.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7AE19BFA1E07A275009A6DF1 /* Formatters.swift */; };
+		7AE19BFD1E07A2D4009A6DF1 /* ChartFormatter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7AE19BFC1E07A2D4009A6DF1 /* ChartFormatter.swift */; };
+		7AE19BFF1E07A343009A6DF1 /* EquityDashboardTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7AE19BFE1E07A343009A6DF1 /* EquityDashboardTableViewController.swift */; };
+		7AE19C011E07A3AF009A6DF1 /* UserDefaultsManagement.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7AE19C001E07A3AF009A6DF1 /* UserDefaultsManagement.swift */; };
+		7AE19C041E07A46C009A6DF1 /* Equity.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7AE19C031E07A46C009A6DF1 /* Equity.swift */; };
+		7AE19C071E07A56B009A6DF1 /* ErrorHandling.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7AE19C061E07A56B009A6DF1 /* ErrorHandling.swift */; };
+		7AE19C0A1E07A59D009A6DF1 /* EquityApiClientProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7AE19C091E07A59D009A6DF1 /* EquityApiClientProtocol.swift */; };
+		7AE19C0D1E07A5BC009A6DF1 /* EquitySearch.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7AE19C0C1E07A5BC009A6DF1 /* EquitySearch.swift */; };
+		7AE19C0F1E07A5E1009A6DF1 /* EquityDetails.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7AE19C0E1E07A5E1009A6DF1 /* EquityDetails.swift */; };
+		7AE19C111E07A7B0009A6DF1 /* EquityChartpoint.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7AE19C101E07A7B0009A6DF1 /* EquityChartpoint.swift */; };
+		7AE19C131E07A7D6009A6DF1 /* EquityNewsFeed.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7AE19C121E07A7D6009A6DF1 /* EquityNewsFeed.swift */; };
+		7AE19C151E07A80B009A6DF1 /* EquityTweet.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7AE19C141E07A80B009A6DF1 /* EquityTweet.swift */; };
+		7AE19C171E07A87B009A6DF1 /* XMSegmentedControl.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7AE19C161E07A87B009A6DF1 /* XMSegmentedControl.swift */; };
+		7AE19C1A1E07A88A009A6DF1 /* EquityNetworkManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7AE19C191E07A88A009A6DF1 /* EquityNetworkManager.swift */; };
+		7AE19C1D1E07A9EE009A6DF1 /* MainEquityCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7AE19C1B1E07A9EE009A6DF1 /* MainEquityCell.swift */; };
+		7AE19C1E1E07A9EE009A6DF1 /* MainEquityCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 7AE19C1C1E07A9EE009A6DF1 /* MainEquityCell.xib */; };
+		7AE19C211E07ABD7009A6DF1 /* EquityDetailsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7AE19C201E07ABD7009A6DF1 /* EquityDetailsViewController.swift */; };
+		7AE19C231E07ABEA009A6DF1 /* SearchEquityViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7AE19C221E07ABEA009A6DF1 /* SearchEquityViewController.swift */; };
+		7AE19C251E07AC30009A6DF1 /* EquityDataModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7AE19C241E07AC30009A6DF1 /* EquityDataModel.swift */; };
+		7AE19C2A1E07BB6C009A6DF1 /* SearchEquityDataModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7AE19C291E07BB6C009A6DF1 /* SearchEquityDataModel.swift */; };
+		7AE19C2D1E07BDE6009A6DF1 /* SearchEquityCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 7AE19C2B1E07BDE6009A6DF1 /* SearchEquityCell.xib */; };
+		7AE19C2E1E07BDE6009A6DF1 /* SearchEquityCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7AE19C2C1E07BDE6009A6DF1 /* SearchEquityCell.swift */; };
+		7AE19C301E07C307009A6DF1 /* EquityDetailsDataModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7AE19C2F1E07C307009A6DF1 /* EquityDetailsDataModel.swift */; };
+		7AE19C361E07C348009A6DF1 /* CustomCollectionViewLayout.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7AE19C311E07C348009A6DF1 /* CustomCollectionViewLayout.swift */; };
+		7AE19C371E07C348009A6DF1 /* EquityDetailsCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7AE19C321E07C348009A6DF1 /* EquityDetailsCollectionViewCell.swift */; };
+		7AE19C381E07C348009A6DF1 /* EquityDetailsCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 7AE19C331E07C348009A6DF1 /* EquityDetailsCollectionViewCell.xib */; };
+		7AE19C391E07C348009A6DF1 /* EquityFeedDetailsCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 7AE19C341E07C348009A6DF1 /* EquityFeedDetailsCell.xib */; };
+		7AE19C3A1E07C348009A6DF1 /* EquityFeedDetailsCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7AE19C351E07C348009A6DF1 /* EquityFeedDetailsCell.swift */; };
+		7AE19C3C1E08CF31009A6DF1 /* StockTweetViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7AE19C3B1E08CF30009A6DF1 /* StockTweetViewController.swift */; };
+		7AE19C3F1E0925A0009A6DF1 /* UIImage Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7AE19C3E1E0925A0009A6DF1 /* UIImage Extension.swift */; };
+		7AE19C411E0985C0009A6DF1 /* SearchEquityDetailsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7AE19C401E0985C0009A6DF1 /* SearchEquityDetailsViewController.swift */; };
+		D8C403FAFEE5467F900601E8 /* Pods_Uptick.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DCC4944F0EE5C672D8AFD2D5 /* Pods_Uptick.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		3DDE245AE88E9F8AD1051551 /* Pods-Uptick.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Uptick.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Uptick/Pods-Uptick.debug.xcconfig"; sourceTree = "<group>"; };
+		7A0EE6F91E0C281C00C8830E /* ColorScheme.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ColorScheme.swift; sourceTree = "<group>"; };
 		7ADE87D91E079DB100518A91 /* Uptick.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Uptick.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		7ADE87DC1E079DB100518A91 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		7ADE87DE1E079DB100518A91 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		7ADE87E11E079DB100518A91 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		7ADE87E31E079DB100518A91 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		7ADE87E61E079DB100518A91 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		7ADE87E81E079DB100518A91 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		7AE19BF21E07A116009A6DF1 /* UIColor+HexColors.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIColor+HexColors.swift"; sourceTree = "<group>"; };
+		7AE19BF41E07A14D009A6DF1 /* Font.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Font.swift; sourceTree = "<group>"; };
+		7AE19BFA1E07A275009A6DF1 /* Formatters.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Formatters.swift; sourceTree = "<group>"; };
+		7AE19BFC1E07A2D4009A6DF1 /* ChartFormatter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ChartFormatter.swift; sourceTree = "<group>"; };
+		7AE19BFE1E07A343009A6DF1 /* EquityDashboardTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EquityDashboardTableViewController.swift; sourceTree = "<group>"; };
+		7AE19C001E07A3AF009A6DF1 /* UserDefaultsManagement.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UserDefaultsManagement.swift; sourceTree = "<group>"; };
+		7AE19C031E07A46C009A6DF1 /* Equity.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Equity.swift; sourceTree = "<group>"; };
+		7AE19C061E07A56B009A6DF1 /* ErrorHandling.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ErrorHandling.swift; sourceTree = "<group>"; };
+		7AE19C091E07A59D009A6DF1 /* EquityApiClientProtocol.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EquityApiClientProtocol.swift; sourceTree = "<group>"; };
+		7AE19C0C1E07A5BC009A6DF1 /* EquitySearch.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EquitySearch.swift; sourceTree = "<group>"; };
+		7AE19C0E1E07A5E1009A6DF1 /* EquityDetails.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EquityDetails.swift; sourceTree = "<group>"; };
+		7AE19C101E07A7B0009A6DF1 /* EquityChartpoint.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EquityChartpoint.swift; sourceTree = "<group>"; };
+		7AE19C121E07A7D6009A6DF1 /* EquityNewsFeed.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EquityNewsFeed.swift; sourceTree = "<group>"; };
+		7AE19C141E07A80B009A6DF1 /* EquityTweet.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EquityTweet.swift; sourceTree = "<group>"; };
+		7AE19C161E07A87B009A6DF1 /* XMSegmentedControl.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = XMSegmentedControl.swift; sourceTree = "<group>"; };
+		7AE19C191E07A88A009A6DF1 /* EquityNetworkManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EquityNetworkManager.swift; sourceTree = "<group>"; };
+		7AE19C1B1E07A9EE009A6DF1 /* MainEquityCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MainEquityCell.swift; sourceTree = "<group>"; };
+		7AE19C1C1E07A9EE009A6DF1 /* MainEquityCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = MainEquityCell.xib; sourceTree = "<group>"; };
+		7AE19C201E07ABD7009A6DF1 /* EquityDetailsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EquityDetailsViewController.swift; sourceTree = "<group>"; };
+		7AE19C221E07ABEA009A6DF1 /* SearchEquityViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SearchEquityViewController.swift; sourceTree = "<group>"; };
+		7AE19C241E07AC30009A6DF1 /* EquityDataModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EquityDataModel.swift; sourceTree = "<group>"; };
+		7AE19C291E07BB6C009A6DF1 /* SearchEquityDataModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SearchEquityDataModel.swift; sourceTree = "<group>"; };
+		7AE19C2B1E07BDE6009A6DF1 /* SearchEquityCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = SearchEquityCell.xib; sourceTree = "<group>"; };
+		7AE19C2C1E07BDE6009A6DF1 /* SearchEquityCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SearchEquityCell.swift; sourceTree = "<group>"; };
+		7AE19C2F1E07C307009A6DF1 /* EquityDetailsDataModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EquityDetailsDataModel.swift; sourceTree = "<group>"; };
+		7AE19C311E07C348009A6DF1 /* CustomCollectionViewLayout.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CustomCollectionViewLayout.swift; sourceTree = "<group>"; };
+		7AE19C321E07C348009A6DF1 /* EquityDetailsCollectionViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EquityDetailsCollectionViewCell.swift; sourceTree = "<group>"; };
+		7AE19C331E07C348009A6DF1 /* EquityDetailsCollectionViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = EquityDetailsCollectionViewCell.xib; sourceTree = "<group>"; };
+		7AE19C341E07C348009A6DF1 /* EquityFeedDetailsCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = EquityFeedDetailsCell.xib; sourceTree = "<group>"; };
+		7AE19C351E07C348009A6DF1 /* EquityFeedDetailsCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EquityFeedDetailsCell.swift; sourceTree = "<group>"; };
+		7AE19C3B1E08CF30009A6DF1 /* StockTweetViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StockTweetViewController.swift; sourceTree = "<group>"; };
+		7AE19C3E1E0925A0009A6DF1 /* UIImage Extension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIImage Extension.swift"; sourceTree = "<group>"; };
+		7AE19C401E0985C0009A6DF1 /* SearchEquityDetailsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SearchEquityDetailsViewController.swift; sourceTree = "<group>"; };
+		B751287E30D7545F45CD1726 /* Pods-Uptick.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Uptick.release.xcconfig"; path = "Pods/Target Support Files/Pods-Uptick/Pods-Uptick.release.xcconfig"; sourceTree = "<group>"; };
+		DCC4944F0EE5C672D8AFD2D5 /* Pods_Uptick.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Uptick.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -29,6 +99,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				D8C403FAFEE5467F900601E8 /* Pods_Uptick.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -40,6 +111,8 @@
 			children = (
 				7ADE87DB1E079DB100518A91 /* Uptick */,
 				7ADE87DA1E079DB100518A91 /* Products */,
+				8E5161ABA89513282C518792 /* Pods */,
+				943B454CEB7F83D6130A0909 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -54,14 +127,152 @@
 		7ADE87DB1E079DB100518A91 /* Uptick */ = {
 			isa = PBXGroup;
 			children = (
-				7ADE87DC1E079DB100518A91 /* AppDelegate.swift */,
-				7ADE87DE1E079DB100518A91 /* ViewController.swift */,
-				7ADE87E01E079DB100518A91 /* Main.storyboard */,
-				7ADE87E31E079DB100518A91 /* Assets.xcassets */,
-				7ADE87E51E079DB100518A91 /* LaunchScreen.storyboard */,
-				7ADE87E81E079DB100518A91 /* Info.plist */,
+				7AE19BF91E07A230009A6DF1 /* Application */,
+				7AE19C281E07BB04009A6DF1 /* Controllers */,
+				7AE19C261E07B0E9009A6DF1 /* DataModels */,
+				7AE19C181E07A87F009A6DF1 /* Views */,
+				7AE19C1F1E07A9FA009A6DF1 /* Network */,
+				7AE19C0B1E07A5AD009A6DF1 /* Protocols */,
+				7AE19C081E07A578009A6DF1 /* ErrorHandling */,
+				7AE19C051E07A553009A6DF1 /* Models */,
+				7AE19C021E07A3FF009A6DF1 /* UserDefaults */,
+				7AE19BF81E07A18C009A6DF1 /* Systems & Extensions */,
+				7AE19BF11E079F4A009A6DF1 /* Resources */,
 			);
 			path = Uptick;
+			sourceTree = "<group>";
+		};
+		7AE19BF11E079F4A009A6DF1 /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				7ADE87E31E079DB100518A91 /* Assets.xcassets */,
+				7ADE87E81E079DB100518A91 /* Info.plist */,
+			);
+			name = Resources;
+			sourceTree = "<group>";
+		};
+		7AE19BF81E07A18C009A6DF1 /* Systems & Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				7AE19BFA1E07A275009A6DF1 /* Formatters.swift */,
+				7AE19BF21E07A116009A6DF1 /* UIColor+HexColors.swift */,
+				7AE19BF41E07A14D009A6DF1 /* Font.swift */,
+				7AE19BFC1E07A2D4009A6DF1 /* ChartFormatter.swift */,
+				7A0EE6F91E0C281C00C8830E /* ColorScheme.swift */,
+				7AE19C3E1E0925A0009A6DF1 /* UIImage Extension.swift */,
+			);
+			name = "Systems & Extensions";
+			sourceTree = "<group>";
+		};
+		7AE19BF91E07A230009A6DF1 /* Application */ = {
+			isa = PBXGroup;
+			children = (
+				7ADE87E01E079DB100518A91 /* Main.storyboard */,
+				7ADE87DC1E079DB100518A91 /* AppDelegate.swift */,
+				7ADE87E51E079DB100518A91 /* LaunchScreen.storyboard */,
+			);
+			name = Application;
+			sourceTree = "<group>";
+		};
+		7AE19C021E07A3FF009A6DF1 /* UserDefaults */ = {
+			isa = PBXGroup;
+			children = (
+				7AE19C001E07A3AF009A6DF1 /* UserDefaultsManagement.swift */,
+			);
+			name = UserDefaults;
+			sourceTree = "<group>";
+		};
+		7AE19C051E07A553009A6DF1 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				7AE19C031E07A46C009A6DF1 /* Equity.swift */,
+				7AE19C0C1E07A5BC009A6DF1 /* EquitySearch.swift */,
+				7AE19C0E1E07A5E1009A6DF1 /* EquityDetails.swift */,
+				7AE19C101E07A7B0009A6DF1 /* EquityChartpoint.swift */,
+				7AE19C121E07A7D6009A6DF1 /* EquityNewsFeed.swift */,
+				7AE19C141E07A80B009A6DF1 /* EquityTweet.swift */,
+			);
+			name = Models;
+			sourceTree = "<group>";
+		};
+		7AE19C081E07A578009A6DF1 /* ErrorHandling */ = {
+			isa = PBXGroup;
+			children = (
+				7AE19C061E07A56B009A6DF1 /* ErrorHandling.swift */,
+			);
+			name = ErrorHandling;
+			sourceTree = "<group>";
+		};
+		7AE19C0B1E07A5AD009A6DF1 /* Protocols */ = {
+			isa = PBXGroup;
+			children = (
+				7AE19C091E07A59D009A6DF1 /* EquityApiClientProtocol.swift */,
+			);
+			name = Protocols;
+			sourceTree = "<group>";
+		};
+		7AE19C181E07A87F009A6DF1 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				7AE19C1B1E07A9EE009A6DF1 /* MainEquityCell.swift */,
+				7AE19C1C1E07A9EE009A6DF1 /* MainEquityCell.xib */,
+				7AE19C2C1E07BDE6009A6DF1 /* SearchEquityCell.swift */,
+				7AE19C2B1E07BDE6009A6DF1 /* SearchEquityCell.xib */,
+				7AE19C321E07C348009A6DF1 /* EquityDetailsCollectionViewCell.swift */,
+				7AE19C331E07C348009A6DF1 /* EquityDetailsCollectionViewCell.xib */,
+				7AE19C311E07C348009A6DF1 /* CustomCollectionViewLayout.swift */,
+				7AE19C351E07C348009A6DF1 /* EquityFeedDetailsCell.swift */,
+				7AE19C341E07C348009A6DF1 /* EquityFeedDetailsCell.xib */,
+				7AE19C161E07A87B009A6DF1 /* XMSegmentedControl.swift */,
+			);
+			name = Views;
+			sourceTree = "<group>";
+		};
+		7AE19C1F1E07A9FA009A6DF1 /* Network */ = {
+			isa = PBXGroup;
+			children = (
+				7AE19C191E07A88A009A6DF1 /* EquityNetworkManager.swift */,
+			);
+			name = Network;
+			sourceTree = "<group>";
+		};
+		7AE19C261E07B0E9009A6DF1 /* DataModels */ = {
+			isa = PBXGroup;
+			children = (
+				7AE19C241E07AC30009A6DF1 /* EquityDataModel.swift */,
+				7AE19C291E07BB6C009A6DF1 /* SearchEquityDataModel.swift */,
+				7AE19C2F1E07C307009A6DF1 /* EquityDetailsDataModel.swift */,
+			);
+			name = DataModels;
+			sourceTree = "<group>";
+		};
+		7AE19C281E07BB04009A6DF1 /* Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				7AE19BFE1E07A343009A6DF1 /* EquityDashboardTableViewController.swift */,
+				7AE19C221E07ABEA009A6DF1 /* SearchEquityViewController.swift */,
+				7AE19C401E0985C0009A6DF1 /* SearchEquityDetailsViewController.swift */,
+				7AE19C201E07ABD7009A6DF1 /* EquityDetailsViewController.swift */,
+				7AE19C3B1E08CF30009A6DF1 /* StockTweetViewController.swift */,
+			);
+			name = Controllers;
+			sourceTree = "<group>";
+		};
+		8E5161ABA89513282C518792 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				3DDE245AE88E9F8AD1051551 /* Pods-Uptick.debug.xcconfig */,
+				B751287E30D7545F45CD1726 /* Pods-Uptick.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
+		943B454CEB7F83D6130A0909 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				DCC4944F0EE5C672D8AFD2D5 /* Pods_Uptick.framework */,
+			);
+			name = Frameworks;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -71,9 +282,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 7ADE87EB1E079DB100518A91 /* Build configuration list for PBXNativeTarget "Uptick" */;
 			buildPhases = (
+				AB161BA27DE9C03BF1F7FAD5 /* [CP] Check Pods Manifest.lock */,
 				7ADE87D51E079DB100518A91 /* Sources */,
 				7ADE87D61E079DB100518A91 /* Frameworks */,
 				7ADE87D71E079DB100518A91 /* Resources */,
+				A6A65B43A209EF9E3EACFF9F /* [CP] Embed Pods Frameworks */,
+				CF317958038285BCFA1BBDB0 /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -125,19 +339,100 @@
 			buildActionMask = 2147483647;
 			files = (
 				7ADE87E71E079DB100518A91 /* LaunchScreen.storyboard in Resources */,
+				7AE19C2D1E07BDE6009A6DF1 /* SearchEquityCell.xib in Resources */,
+				7AE19C391E07C348009A6DF1 /* EquityFeedDetailsCell.xib in Resources */,
+				7AE19C1E1E07A9EE009A6DF1 /* MainEquityCell.xib in Resources */,
 				7ADE87E41E079DB100518A91 /* Assets.xcassets in Resources */,
+				7AE19C381E07C348009A6DF1 /* EquityDetailsCollectionViewCell.xib in Resources */,
 				7ADE87E21E079DB100518A91 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
 
+/* Begin PBXShellScriptBuildPhase section */
+		A6A65B43A209EF9E3EACFF9F /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-Uptick/Pods-Uptick-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		AB161BA27DE9C03BF1F7FAD5 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+		CF317958038285BCFA1BBDB0 /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-Uptick/Pods-Uptick-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
 		7ADE87D51E079DB100518A91 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				7ADE87DF1E079DB100518A91 /* ViewController.swift in Sources */,
+				7AE19C2E1E07BDE6009A6DF1 /* SearchEquityCell.swift in Sources */,
+				7AE19C1A1E07A88A009A6DF1 /* EquityNetworkManager.swift in Sources */,
+				7AE19C2A1E07BB6C009A6DF1 /* SearchEquityDataModel.swift in Sources */,
+				7AE19C111E07A7B0009A6DF1 /* EquityChartpoint.swift in Sources */,
+				7AE19C251E07AC30009A6DF1 /* EquityDataModel.swift in Sources */,
+				7AE19C231E07ABEA009A6DF1 /* SearchEquityViewController.swift in Sources */,
+				7A0EE6FA1E0C281C00C8830E /* ColorScheme.swift in Sources */,
+				7AE19BFB1E07A275009A6DF1 /* Formatters.swift in Sources */,
+				7AE19BFF1E07A343009A6DF1 /* EquityDashboardTableViewController.swift in Sources */,
+				7AE19C171E07A87B009A6DF1 /* XMSegmentedControl.swift in Sources */,
+				7AE19C0F1E07A5E1009A6DF1 /* EquityDetails.swift in Sources */,
+				7AE19C3F1E0925A0009A6DF1 /* UIImage Extension.swift in Sources */,
+				7AE19BF51E07A14D009A6DF1 /* Font.swift in Sources */,
+				7AE19C011E07A3AF009A6DF1 /* UserDefaultsManagement.swift in Sources */,
+				7AE19C151E07A80B009A6DF1 /* EquityTweet.swift in Sources */,
+				7AE19C301E07C307009A6DF1 /* EquityDetailsDataModel.swift in Sources */,
+				7AE19BFD1E07A2D4009A6DF1 /* ChartFormatter.swift in Sources */,
+				7AE19C411E0985C0009A6DF1 /* SearchEquityDetailsViewController.swift in Sources */,
+				7AE19C0A1E07A59D009A6DF1 /* EquityApiClientProtocol.swift in Sources */,
+				7AE19C371E07C348009A6DF1 /* EquityDetailsCollectionViewCell.swift in Sources */,
+				7AE19C3A1E07C348009A6DF1 /* EquityFeedDetailsCell.swift in Sources */,
+				7AE19BF31E07A116009A6DF1 /* UIColor+HexColors.swift in Sources */,
+				7AE19C1D1E07A9EE009A6DF1 /* MainEquityCell.swift in Sources */,
+				7AE19C211E07ABD7009A6DF1 /* EquityDetailsViewController.swift in Sources */,
+				7AE19C3C1E08CF31009A6DF1 /* StockTweetViewController.swift in Sources */,
+				7AE19C131E07A7D6009A6DF1 /* EquityNewsFeed.swift in Sources */,
+				7AE19C0D1E07A5BC009A6DF1 /* EquitySearch.swift in Sources */,
+				7AE19C071E07A56B009A6DF1 /* ErrorHandling.swift in Sources */,
+				7AE19C041E07A46C009A6DF1 /* Equity.swift in Sources */,
+				7AE19C361E07C348009A6DF1 /* CustomCollectionViewLayout.swift in Sources */,
 				7ADE87DD1E079DB100518A91 /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -257,6 +552,7 @@
 		};
 		7ADE87EC1E079DB100518A91 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 3DDE245AE88E9F8AD1051551 /* Pods-Uptick.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				DEVELOPMENT_TEAM = KG5698275Z;
@@ -270,6 +566,7 @@
 		};
 		7ADE87ED1E079DB100518A91 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = B751287E30D7545F45CD1726 /* Pods-Uptick.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				DEVELOPMENT_TEAM = KG5698275Z;
@@ -300,6 +597,7 @@
 				7ADE87ED1E079DB100518A91 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
