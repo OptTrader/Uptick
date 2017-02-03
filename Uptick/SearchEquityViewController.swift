@@ -19,8 +19,8 @@ class SearchEquityViewController: UIViewController {
     
     fileprivate let searchController = UISearchController(searchResultsController: nil)
     fileprivate var shouldShowSearchResults = false
-    private let datasource = SearchEquityDataModel()
-    fileprivate var searchResults = [EquitySearch]() {
+    private let datasource = SearchDataModel()
+    fileprivate var searchResults = [Search]() {
         didSet {
             tableView?.reloadData()
         }
@@ -126,34 +126,24 @@ class SearchEquityViewController: UIViewController {
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if segue.identifier == Storyboard.SearchDetailsSegue  {
+            var equityViewController: EquityDetailsViewController!
+            if let detailsNavController = segue.destination as? UINavigationController {
+                equityViewController = detailsNavController.topViewController as! EquityDetailsViewController
+                equityViewController.navigationItem.leftBarButtonItem = self.splitViewController?.displayModeButtonItem
+                equityViewController.navigationItem.leftItemsSupplementBackButton = true
+            } else {
+                equityViewController = segue.destination as! EquityDetailsViewController
+            }
             if let selectedRowIndexPath = tableView?.indexPathForSelectedRow {
                 let equity = searchResults[selectedRowIndexPath.row]
-                let controller = segue.destination as! SearchEquityDetailsViewController
-                controller.selectedSearchEquity = equity
-                controller.navigationItem.leftItemsSupplementBackButton = true
+                equityViewController.equitySymbol = equity.symbol!
             }
-            
         }
-        
-//        if segue.identifier == Storyboard.SearchDetailsSegue {
-//            var searchEquityDetailsViewController: SearchEquityDetailsViewController!
-//            if let detailsNavController = segue.destination as? UINavigationController {
-//                searchEquityDetailsViewController = detailsNavController.topViewController as! SearchEquityDetailsViewController
-//                searchEquityDetailsViewController.navigationItem.leftItemsSupplementBackButton = true
-//            } else {
-//                searchEquityDetailsViewController = segue.destination as! SearchEquityDetailsViewController
-//            }
-//            if let selectedRowIndexPath = tableView?.indexPathForSelectedRow {
-//                let equity = searchResults[selectedRowIndexPath.row]
-//                searchEquityDetailsViewController.selectedSearchEquity = equity
-//            }
-//        }
     }
     
     // MARK: Constants
     
     fileprivate struct Storyboard {
-//        static let SearchEquityDetailsViewController = "SearchEquityDetailsViewController"
         static let SearchDetailsSegue = "showSearchDetails"
     }
 }
@@ -179,6 +169,13 @@ extension SearchEquityViewController: UITableViewDataSource {
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         self.performSegue(withIdentifier: Storyboard.SearchDetailsSegue, sender: self)
+        let selectedCell: UITableViewCell = tableView.cellForRow(at: indexPath)!
+        selectedCell.contentView.backgroundColor = UIColor.black
+    }
+    
+    func tableView(_ tableView: UITableView, didDeselectRowAt indexPath: IndexPath) {
+        let cellToDeSelect: UITableViewCell = tableView.cellForRow(at: indexPath)!
+        cellToDeSelect.contentView.backgroundColor = UIColor.clear
     }
 }
 
@@ -237,8 +234,8 @@ extension SearchEquityViewController: SearchEquityCellDelegate {
     }
 }
 
-extension SearchEquityViewController: SearchEquityViewControllerModelDelegate {
-    func didReceiveSearchData(data: [EquitySearch]) {
+extension SearchEquityViewController: SearchViewControllerModelDelegate {
+    func didReceiveSearchData(data: [Search]) {
         self.searchResults = data
     }
     

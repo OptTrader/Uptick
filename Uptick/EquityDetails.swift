@@ -11,6 +11,7 @@ import SwiftyJSON
 import Pantry
 
 struct EquityDetails {
+    var companyName: String?
     var lastTradePrice: Double?
     var previousClosePrice: Double?
     var changeInPrice: Double?
@@ -18,8 +19,8 @@ struct EquityDetails {
     var bid: Double?
     var ask: Double?
     var open: Double?
-    var volume: Int?
-    var percentOfAverageVolume: Double?
+    var currentVolume: Int?
+    var averageDailyVolume: Int?
     var dailyHigh: Double?
     var dailyLow: Double?
     var yearHigh: Double?
@@ -31,23 +32,20 @@ struct EquityDetails {
 
 extension EquityDetails {
     init(json: JSON) {
+        self.companyName = json["Name"].stringValue
         self.lastTradePrice = json["LastTradePriceOnly"].doubleValue
         self.previousClosePrice = json["PreviousClose"].doubleValue
         self.changeInPrice = json["Change"].doubleValue
-        self.changeInPercent = self.changeInPrice! / self.previousClosePrice!
+        if (self.changeInPrice != nil) && (self.previousClosePrice != nil) {
+            self.changeInPercent = self.changeInPrice! / self.previousClosePrice!
+        } else {
+            self.changeInPercent = 0.00
+        }
         self.bid = json["Bid"].doubleValue
         self.ask = json["Ask"].doubleValue
         self.open = json["Open"].doubleValue
-        self.volume = json["Volume"].intValue
-        let averageDailyVolume = json["AverageDailyVolume"].intValue
-        
-        if (self.volume != nil) && averageDailyVolume > 0 {
-            self.percentOfAverageVolume = Double(volume! / averageDailyVolume)
-        } else {
-            self.percentOfAverageVolume = 0.00
-        }
-
-//        self.percentOfAverageVolume = Double(volume! / averageDailyVolume)
+        self.currentVolume = json["Volume"].intValue
+        self.averageDailyVolume = json["AverageDailyVolume"].intValue
         self.dailyHigh = json["DaysHigh"].doubleValue
         self.dailyLow = json["DaysLow"].doubleValue
         self.yearHigh = json["YearHigh"].doubleValue

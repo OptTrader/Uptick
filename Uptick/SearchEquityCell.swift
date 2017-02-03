@@ -44,7 +44,7 @@ class SearchEquityCell: UITableViewCell {
         super.setSelected(selected, animated: animated)
     }
     
-    func configureItem(item: EquitySearch) {
+    func configureItem(item: Search) {
         // appearance
         symbolLabel?.textColor = ColorScheme.cellPrimaryTextColor
         companyNameLabel?.textColor = ColorScheme.cellSecondaryTextColor

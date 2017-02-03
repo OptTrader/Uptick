@@ -48,6 +48,8 @@ class MainEquityCell: UITableViewCell {
         companyNameLabel?.textColor = ColorScheme.cellSecondaryTextColor
         priceInfoLabel?.textColor = UIColor.white
         
+        companyNameLabel.adjustsFontSizeToFitWidth = true
+        
         symbolLabel?.text = item.symbol
         companyNameLabel?.text = item.companyName
         priceInfoLabel?.text = Formatters.sharedInstance.stringFromPrice(
@@ -71,15 +73,15 @@ class MainEquityCell: UITableViewCell {
     func configurePriceInfoView(state: Int, item: Equity) {
         let state = state
         switch state {
-        case _ where state == 1:
-            return (self.priceInfoLabel?.text = Formatters.sharedInstance.stringFromChangeNumber(number: item.changeInPrice))!
-        case _ where state == 2:
-            return (self.priceInfoLabel?.text = Formatters.sharedInstance.stringFromPercent(
-                percent: item.changeInPercent))!
-        default:
-            return (self.priceInfoLabel?.text = Formatters.sharedInstance.stringFromPrice(
-                price: item.lastTradePrice,
-                currencyCode: "USD"))!
+            case _ where state == 1:
+                return (self.priceInfoLabel?.text = Formatters.sharedInstance.stringFromChangeNumber(number: item.changeInPrice))!
+            case _ where state == 2:
+                return (self.priceInfoLabel?.text = Formatters.sharedInstance.stringFromPercent(
+                    percent: item.changeInPercent))!
+            default:
+                return (self.priceInfoLabel?.text = Formatters.sharedInstance.stringFromPrice(
+                    price: item.lastTradePrice,
+                    currencyCode: "USD"))!
         }
     }
     

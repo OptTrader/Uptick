@@ -16,8 +16,8 @@ class EquityDashboardTableViewController: UITableViewController {
 
     // MARK: Outlets & Properties
     
-    private let datasource = EquityDataModel()
-    fileprivate var equities = [Equity]() {
+    private let datasource = EquityDataModel()    
+    var equities = [Equity]() {
         didSet {
             tableView?.reloadData()
         }
@@ -25,13 +25,22 @@ class EquityDashboardTableViewController: UITableViewController {
     fileprivate var errorBanner: Banner?
     fileprivate var deleteEquityIndexPath: IndexPath? = nil
     fileprivate var viewState = 0
+    fileprivate var detailViewController: EquityDetailsViewController? = nil
+    var collapseDetailViewController: Bool  = true
     
     // MARK: View Life Cycle
+    
+    override func awakeFromNib() {
+        super.awakeFromNib()
+        splitViewController?.preferredDisplayMode = .allVisible
+        splitViewController?.delegate = self
+    }
     
     override func viewDidLoad() {
         super.viewDidLoad()
         configureView()
         tableView?.register(MainEquityCell.nib, forCellReuseIdentifier: Storyboard.CellIdentifier)
+        self.equities = Pantry.unpack(Storyboard.EquityStorage) ?? []
         datasource.delegate = self
     }
     
@@ -122,14 +131,14 @@ class EquityDashboardTableViewController: UITableViewController {
             var equityViewController: EquityDetailsViewController!
             if let detailsNavController = segue.destination as? UINavigationController {
                 equityViewController = detailsNavController.topViewController as! EquityDetailsViewController
-//                equityViewController.navigationItem.leftBarButtonItem = self.splitViewController?.displayModeButtonItem
+                equityViewController.navigationItem.leftBarButtonItem = self.splitViewController?.displayModeButtonItem
                 equityViewController.navigationItem.leftItemsSupplementBackButton = true
             } else {
                 equityViewController = segue.destination as! EquityDetailsViewController
             }
             if let selectedRowIndexPath = tableView.indexPathForSelectedRow {
                 let equity = equities[selectedRowIndexPath.row]
-                equityViewController.selectedEquity = equity
+                equityViewController.equitySymbol = equity.symbol!
             }
         }
     }
@@ -138,8 +147,6 @@ class EquityDashboardTableViewController: UITableViewController {
     
     fileprivate struct Storyboard {
         static let CellIdentifier = "MainEquityCell"
-//        static let DetailNavController = "DetailNavigationController"
-//        static let EquityDetailsViewController = "EquityDetailsViewController"
         static let DetailsSegue = "showDetails"
         static let EquityStorage = "Equity"
     }
@@ -165,6 +172,15 @@ extension EquityDashboardTableViewController {
     
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         self.performSegue(withIdentifier: Storyboard.DetailsSegue, sender: self)
+        self.collapseDetailViewController = false
+        
+        let selectedCell: UITableViewCell = tableView.cellForRow(at: indexPath)!
+        selectedCell.contentView.backgroundColor = UIColor.black
+    }
+    
+    override func tableView(_ tableView: UITableView, didDeselectRowAt indexPath: IndexPath) {
+        let cellToDeSelect: UITableViewCell = tableView.cellForRow(at: indexPath)!
+        cellToDeSelect.contentView.backgroundColor = UIColor.clear
     }
     
     override func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCellEditingStyle, forRowAt indexPath: IndexPath) {
@@ -182,7 +198,12 @@ extension EquityDashboardTableViewController {
         
         alert.addAction(deleteAction)
         alert.addAction(cancelAction)
-                
+        
+        if let popoverPresentationController = alert.popoverPresentationController {
+            popoverPresentationController.sourceView = self.view
+            popoverPresentationController.sourceRect = self.view.bounds
+        }
+        
         self.present(alert, animated: true, completion: nil)
     }
     
@@ -209,9 +230,7 @@ extension EquityDashboardTableViewController {
     func cancelDeleteStock(alertAction: UIAlertAction!) {
         deleteEquityIndexPath = nil
     }
-
 }
-
 
 extension EquityDashboardTableViewController: EquityViewControllerModelDelegate {
     func didReceiveDataUpdate(data: [Equity]) {
@@ -222,7 +241,6 @@ extension EquityDashboardTableViewController: EquityViewControllerModelDelegate 
     func didFailDataUpdateWithError(error: Error) {
         handleLoadEquitiesError(error)
     }
-
 }
 
 extension EquityDashboardTableViewController: MainEquityCellTapPriceInfoDelegate {
@@ -234,6 +252,12 @@ extension EquityDashboardTableViewController: MainEquityCellTapPriceInfoDelegate
             viewState = 0
             tableView.reloadData()
         }
+    }
+}
+
+extension EquityDashboardTableViewController: UISplitViewControllerDelegate {
+    func splitViewController(_ splitViewController: UISplitViewController, collapseSecondary secondaryViewController: UIViewController, onto primaryViewController: UIViewController) -> Bool {
+        return true
     }
 }
 

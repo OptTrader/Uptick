@@ -8,6 +8,41 @@
 
 /* Begin PBXBuildFile section */
 		7A0EE6FA1E0C281C00C8830E /* ColorScheme.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A0EE6F91E0C281C00C8830E /* ColorScheme.swift */; };
+		7A296A881E373772007E445A /* NewsFeed.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A296A871E373772007E445A /* NewsFeed.swift */; };
+		7A296A8B1E3737CE007E445A /* Tweet.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A296A8A1E3737CE007E445A /* Tweet.swift */; };
+		7A296A8D1E37384C007E445A /* Chartpoint.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A296A8C1E37384C007E445A /* Chartpoint.swift */; };
+		7A296A8F1E3738A9007E445A /* Search.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A296A8E1E3738A9007E445A /* Search.swift */; };
+		7A296A911E373A3E007E445A /* ChartpointApiClientProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A296A901E373A3E007E445A /* ChartpointApiClientProtocol.swift */; };
+		7A296A931E373A6A007E445A /* NewsFeedApiClientProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A296A921E373A6A007E445A /* NewsFeedApiClientProtocol.swift */; };
+		7A296A951E373A8C007E445A /* TweetApiClientProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A296A941E373A8C007E445A /* TweetApiClientProtocol.swift */; };
+		7A296A971E373AA2007E445A /* SearchApiClientProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A296A961E373AA2007E445A /* SearchApiClientProtocol.swift */; };
+		7A296A991E373BE5007E445A /* UrlEndpoints.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A296A981E373BE5007E445A /* UrlEndpoints.swift */; };
+		7A296A9B1E373FCE007E445A /* String Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A296A9A1E373FCE007E445A /* String Extension.swift */; };
+		7A296A9D1E3794A0007E445A /* SearchNetworkManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A296A9C1E3794A0007E445A /* SearchNetworkManager.swift */; };
+		7A296A9F1E3797DC007E445A /* SearchDataModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A296A9E1E3797DC007E445A /* SearchDataModel.swift */; };
+		7A296AA21E3845A3007E445A /* Currency.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A296AA11E3845A3007E445A /* Currency.swift */; };
+		7A296AA41E384663007E445A /* CurrencyDetails.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A296AA31E384663007E445A /* CurrencyDetails.swift */; };
+		7A296AA61E3846F8007E445A /* Index.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A296AA51E3846F8007E445A /* Index.swift */; };
+		7A296AA91E384736007E445A /* IndexDetails.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A296AA81E384736007E445A /* IndexDetails.swift */; };
+		7A296AAC1E3847A0007E445A /* CurrencyApiClientProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A296AAB1E3847A0007E445A /* CurrencyApiClientProtocol.swift */; };
+		7A296AAE1E38480F007E445A /* IndexApiClientProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A296AAD1E38480F007E445A /* IndexApiClientProtocol.swift */; };
+		7A296AB01E38485E007E445A /* CurrencyNetworkManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A296AAF1E38485E007E445A /* CurrencyNetworkManager.swift */; };
+		7A296AB21E384898007E445A /* IndexNetworkManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A296AB11E384898007E445A /* IndexNetworkManager.swift */; };
+		7A30CA981E248C0500B2CB61 /* SplitViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A30CA971E248C0500B2CB61 /* SplitViewController.swift */; };
+		7A30CA9A1E248CC700B2CB61 /* SplitViewSupport.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A30CA991E248CC700B2CB61 /* SplitViewSupport.swift */; };
+		7A7D19E51E441B15005E90FE /* KDCircularProgress.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A7D19E41E441B15005E90FE /* KDCircularProgress.swift */; };
+		7A7D19E71E441C42005E90FE /* BottomAlignedLabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A7D19E61E441C42005E90FE /* BottomAlignedLabel.swift */; };
+		7A7D19EB1E442376005E90FE /* EquityDetailsViewControllerExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A7D19EA1E442375005E90FE /* EquityDetailsViewControllerExtension.swift */; };
+		7A7D19ED1E442645005E90FE /* Temppp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A7D19EC1E442645005E90FE /* Temppp.swift */; };
+		7AAF1A871E308EF400467310 /* UILabel Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7AAF1A861E308EF400467310 /* UILabel Extension.swift */; };
+		7AAF1A891E31CE3B00467310 /* CAPSPageMenu.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7AAF1A881E31CE3B00467310 /* CAPSPageMenu.swift */; };
+		7AAF1A8B1E31D3E100467310 /* MenuPagesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7AAF1A8A1E31D3E000467310 /* MenuPagesViewController.swift */; };
+		7AAF1A8D1E31D54A00467310 /* IndicesTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7AAF1A8C1E31D54A00467310 /* IndicesTableViewController.swift */; };
+		7AAF1A8F1E31D57C00467310 /* CurrenciesCollectionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7AAF1A8E1E31D57C00467310 /* CurrenciesCollectionViewController.swift */; };
+		7AAF1A921E31D5CC00467310 /* CurrencyCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7AAF1A901E31D5CC00467310 /* CurrencyCollectionViewCell.swift */; };
+		7AAF1A931E31D5CC00467310 /* CurrencyCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 7AAF1A911E31D5CC00467310 /* CurrencyCollectionViewCell.xib */; };
+		7AAF1A961E31D5E200467310 /* IndicesTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7AAF1A941E31D5E200467310 /* IndicesTableViewCell.swift */; };
+		7AAF1A971E31D5E200467310 /* IndicesTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 7AAF1A951E31D5E200467310 /* IndicesTableViewCell.xib */; };
 		7ADE87DD1E079DB100518A91 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7ADE87DC1E079DB100518A91 /* AppDelegate.swift */; };
 		7ADE87E21E079DB100518A91 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 7ADE87E01E079DB100518A91 /* Main.storyboard */; };
 		7ADE87E41E079DB100518A91 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 7ADE87E31E079DB100518A91 /* Assets.xcassets */; };
@@ -21,11 +56,7 @@
 		7AE19C041E07A46C009A6DF1 /* Equity.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7AE19C031E07A46C009A6DF1 /* Equity.swift */; };
 		7AE19C071E07A56B009A6DF1 /* ErrorHandling.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7AE19C061E07A56B009A6DF1 /* ErrorHandling.swift */; };
 		7AE19C0A1E07A59D009A6DF1 /* EquityApiClientProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7AE19C091E07A59D009A6DF1 /* EquityApiClientProtocol.swift */; };
-		7AE19C0D1E07A5BC009A6DF1 /* EquitySearch.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7AE19C0C1E07A5BC009A6DF1 /* EquitySearch.swift */; };
 		7AE19C0F1E07A5E1009A6DF1 /* EquityDetails.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7AE19C0E1E07A5E1009A6DF1 /* EquityDetails.swift */; };
-		7AE19C111E07A7B0009A6DF1 /* EquityChartpoint.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7AE19C101E07A7B0009A6DF1 /* EquityChartpoint.swift */; };
-		7AE19C131E07A7D6009A6DF1 /* EquityNewsFeed.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7AE19C121E07A7D6009A6DF1 /* EquityNewsFeed.swift */; };
-		7AE19C151E07A80B009A6DF1 /* EquityTweet.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7AE19C141E07A80B009A6DF1 /* EquityTweet.swift */; };
 		7AE19C171E07A87B009A6DF1 /* XMSegmentedControl.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7AE19C161E07A87B009A6DF1 /* XMSegmentedControl.swift */; };
 		7AE19C1A1E07A88A009A6DF1 /* EquityNetworkManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7AE19C191E07A88A009A6DF1 /* EquityNetworkManager.swift */; };
 		7AE19C1D1E07A9EE009A6DF1 /* MainEquityCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7AE19C1B1E07A9EE009A6DF1 /* MainEquityCell.swift */; };
@@ -33,7 +64,6 @@
 		7AE19C211E07ABD7009A6DF1 /* EquityDetailsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7AE19C201E07ABD7009A6DF1 /* EquityDetailsViewController.swift */; };
 		7AE19C231E07ABEA009A6DF1 /* SearchEquityViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7AE19C221E07ABEA009A6DF1 /* SearchEquityViewController.swift */; };
 		7AE19C251E07AC30009A6DF1 /* EquityDataModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7AE19C241E07AC30009A6DF1 /* EquityDataModel.swift */; };
-		7AE19C2A1E07BB6C009A6DF1 /* SearchEquityDataModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7AE19C291E07BB6C009A6DF1 /* SearchEquityDataModel.swift */; };
 		7AE19C2D1E07BDE6009A6DF1 /* SearchEquityCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 7AE19C2B1E07BDE6009A6DF1 /* SearchEquityCell.xib */; };
 		7AE19C2E1E07BDE6009A6DF1 /* SearchEquityCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7AE19C2C1E07BDE6009A6DF1 /* SearchEquityCell.swift */; };
 		7AE19C301E07C307009A6DF1 /* EquityDetailsDataModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7AE19C2F1E07C307009A6DF1 /* EquityDetailsDataModel.swift */; };
@@ -44,13 +74,47 @@
 		7AE19C3A1E07C348009A6DF1 /* EquityFeedDetailsCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7AE19C351E07C348009A6DF1 /* EquityFeedDetailsCell.swift */; };
 		7AE19C3C1E08CF31009A6DF1 /* StockTweetViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7AE19C3B1E08CF30009A6DF1 /* StockTweetViewController.swift */; };
 		7AE19C3F1E0925A0009A6DF1 /* UIImage Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7AE19C3E1E0925A0009A6DF1 /* UIImage Extension.swift */; };
-		7AE19C411E0985C0009A6DF1 /* SearchEquityDetailsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7AE19C401E0985C0009A6DF1 /* SearchEquityDetailsViewController.swift */; };
 		D8C403FAFEE5467F900601E8 /* Pods_Uptick.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DCC4944F0EE5C672D8AFD2D5 /* Pods_Uptick.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		3DDE245AE88E9F8AD1051551 /* Pods-Uptick.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Uptick.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Uptick/Pods-Uptick.debug.xcconfig"; sourceTree = "<group>"; };
 		7A0EE6F91E0C281C00C8830E /* ColorScheme.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ColorScheme.swift; sourceTree = "<group>"; };
+		7A296A871E373772007E445A /* NewsFeed.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NewsFeed.swift; sourceTree = "<group>"; };
+		7A296A8A1E3737CE007E445A /* Tweet.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Tweet.swift; sourceTree = "<group>"; };
+		7A296A8C1E37384C007E445A /* Chartpoint.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Chartpoint.swift; sourceTree = "<group>"; };
+		7A296A8E1E3738A9007E445A /* Search.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Search.swift; sourceTree = "<group>"; };
+		7A296A901E373A3E007E445A /* ChartpointApiClientProtocol.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ChartpointApiClientProtocol.swift; sourceTree = "<group>"; };
+		7A296A921E373A6A007E445A /* NewsFeedApiClientProtocol.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NewsFeedApiClientProtocol.swift; sourceTree = "<group>"; };
+		7A296A941E373A8C007E445A /* TweetApiClientProtocol.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TweetApiClientProtocol.swift; sourceTree = "<group>"; };
+		7A296A961E373AA2007E445A /* SearchApiClientProtocol.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SearchApiClientProtocol.swift; sourceTree = "<group>"; };
+		7A296A981E373BE5007E445A /* UrlEndpoints.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UrlEndpoints.swift; sourceTree = "<group>"; };
+		7A296A9A1E373FCE007E445A /* String Extension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "String Extension.swift"; sourceTree = "<group>"; };
+		7A296A9C1E3794A0007E445A /* SearchNetworkManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SearchNetworkManager.swift; sourceTree = "<group>"; };
+		7A296A9E1E3797DC007E445A /* SearchDataModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SearchDataModel.swift; sourceTree = "<group>"; };
+		7A296AA11E3845A3007E445A /* Currency.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Currency.swift; sourceTree = "<group>"; };
+		7A296AA31E384663007E445A /* CurrencyDetails.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CurrencyDetails.swift; sourceTree = "<group>"; };
+		7A296AA51E3846F8007E445A /* Index.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Index.swift; sourceTree = "<group>"; };
+		7A296AA81E384736007E445A /* IndexDetails.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = IndexDetails.swift; sourceTree = "<group>"; };
+		7A296AAB1E3847A0007E445A /* CurrencyApiClientProtocol.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CurrencyApiClientProtocol.swift; sourceTree = "<group>"; };
+		7A296AAD1E38480F007E445A /* IndexApiClientProtocol.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = IndexApiClientProtocol.swift; sourceTree = "<group>"; };
+		7A296AAF1E38485E007E445A /* CurrencyNetworkManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CurrencyNetworkManager.swift; sourceTree = "<group>"; };
+		7A296AB11E384898007E445A /* IndexNetworkManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = IndexNetworkManager.swift; sourceTree = "<group>"; };
+		7A30CA971E248C0500B2CB61 /* SplitViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SplitViewController.swift; sourceTree = "<group>"; };
+		7A30CA991E248CC700B2CB61 /* SplitViewSupport.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SplitViewSupport.swift; sourceTree = "<group>"; };
+		7A7D19E41E441B15005E90FE /* KDCircularProgress.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = KDCircularProgress.swift; sourceTree = "<group>"; };
+		7A7D19E61E441C42005E90FE /* BottomAlignedLabel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BottomAlignedLabel.swift; sourceTree = "<group>"; };
+		7A7D19EA1E442375005E90FE /* EquityDetailsViewControllerExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EquityDetailsViewControllerExtension.swift; sourceTree = "<group>"; };
+		7A7D19EC1E442645005E90FE /* Temppp.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Temppp.swift; sourceTree = "<group>"; };
+		7AAF1A861E308EF400467310 /* UILabel Extension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UILabel Extension.swift"; sourceTree = "<group>"; };
+		7AAF1A881E31CE3B00467310 /* CAPSPageMenu.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CAPSPageMenu.swift; sourceTree = "<group>"; };
+		7AAF1A8A1E31D3E000467310 /* MenuPagesViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MenuPagesViewController.swift; sourceTree = "<group>"; };
+		7AAF1A8C1E31D54A00467310 /* IndicesTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = IndicesTableViewController.swift; sourceTree = "<group>"; };
+		7AAF1A8E1E31D57C00467310 /* CurrenciesCollectionViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CurrenciesCollectionViewController.swift; sourceTree = "<group>"; };
+		7AAF1A901E31D5CC00467310 /* CurrencyCollectionViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CurrencyCollectionViewCell.swift; sourceTree = "<group>"; };
+		7AAF1A911E31D5CC00467310 /* CurrencyCollectionViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = CurrencyCollectionViewCell.xib; sourceTree = "<group>"; };
+		7AAF1A941E31D5E200467310 /* IndicesTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = IndicesTableViewCell.swift; sourceTree = "<group>"; };
+		7AAF1A951E31D5E200467310 /* IndicesTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = IndicesTableViewCell.xib; sourceTree = "<group>"; };
 		7ADE87D91E079DB100518A91 /* Uptick.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Uptick.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		7ADE87DC1E079DB100518A91 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		7ADE87E11E079DB100518A91 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -66,11 +130,7 @@
 		7AE19C031E07A46C009A6DF1 /* Equity.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Equity.swift; sourceTree = "<group>"; };
 		7AE19C061E07A56B009A6DF1 /* ErrorHandling.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ErrorHandling.swift; sourceTree = "<group>"; };
 		7AE19C091E07A59D009A6DF1 /* EquityApiClientProtocol.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EquityApiClientProtocol.swift; sourceTree = "<group>"; };
-		7AE19C0C1E07A5BC009A6DF1 /* EquitySearch.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EquitySearch.swift; sourceTree = "<group>"; };
 		7AE19C0E1E07A5E1009A6DF1 /* EquityDetails.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EquityDetails.swift; sourceTree = "<group>"; };
-		7AE19C101E07A7B0009A6DF1 /* EquityChartpoint.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EquityChartpoint.swift; sourceTree = "<group>"; };
-		7AE19C121E07A7D6009A6DF1 /* EquityNewsFeed.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EquityNewsFeed.swift; sourceTree = "<group>"; };
-		7AE19C141E07A80B009A6DF1 /* EquityTweet.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EquityTweet.swift; sourceTree = "<group>"; };
 		7AE19C161E07A87B009A6DF1 /* XMSegmentedControl.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = XMSegmentedControl.swift; sourceTree = "<group>"; };
 		7AE19C191E07A88A009A6DF1 /* EquityNetworkManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EquityNetworkManager.swift; sourceTree = "<group>"; };
 		7AE19C1B1E07A9EE009A6DF1 /* MainEquityCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MainEquityCell.swift; sourceTree = "<group>"; };
@@ -78,7 +138,6 @@
 		7AE19C201E07ABD7009A6DF1 /* EquityDetailsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EquityDetailsViewController.swift; sourceTree = "<group>"; };
 		7AE19C221E07ABEA009A6DF1 /* SearchEquityViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SearchEquityViewController.swift; sourceTree = "<group>"; };
 		7AE19C241E07AC30009A6DF1 /* EquityDataModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EquityDataModel.swift; sourceTree = "<group>"; };
-		7AE19C291E07BB6C009A6DF1 /* SearchEquityDataModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SearchEquityDataModel.swift; sourceTree = "<group>"; };
 		7AE19C2B1E07BDE6009A6DF1 /* SearchEquityCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = SearchEquityCell.xib; sourceTree = "<group>"; };
 		7AE19C2C1E07BDE6009A6DF1 /* SearchEquityCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SearchEquityCell.swift; sourceTree = "<group>"; };
 		7AE19C2F1E07C307009A6DF1 /* EquityDetailsDataModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EquityDetailsDataModel.swift; sourceTree = "<group>"; };
@@ -89,7 +148,6 @@
 		7AE19C351E07C348009A6DF1 /* EquityFeedDetailsCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EquityFeedDetailsCell.swift; sourceTree = "<group>"; };
 		7AE19C3B1E08CF30009A6DF1 /* StockTweetViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StockTweetViewController.swift; sourceTree = "<group>"; };
 		7AE19C3E1E0925A0009A6DF1 /* UIImage Extension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIImage Extension.swift"; sourceTree = "<group>"; };
-		7AE19C401E0985C0009A6DF1 /* SearchEquityDetailsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SearchEquityDetailsViewController.swift; sourceTree = "<group>"; };
 		B751287E30D7545F45CD1726 /* Pods-Uptick.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Uptick.release.xcconfig"; path = "Pods/Target Support Files/Pods-Uptick/Pods-Uptick.release.xcconfig"; sourceTree = "<group>"; };
 		DCC4944F0EE5C672D8AFD2D5 /* Pods_Uptick.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Uptick.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
@@ -106,6 +164,68 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		7A296A861E372FC0007E445A /* WIP */ = {
+			isa = PBXGroup;
+			children = (
+				7AAF1A8A1E31D3E000467310 /* MenuPagesViewController.swift */,
+				7AAF1A8C1E31D54A00467310 /* IndicesTableViewController.swift */,
+				7AAF1A8E1E31D57C00467310 /* CurrenciesCollectionViewController.swift */,
+				7AAF1A941E31D5E200467310 /* IndicesTableViewCell.swift */,
+				7AAF1A951E31D5E200467310 /* IndicesTableViewCell.xib */,
+				7AAF1A901E31D5CC00467310 /* CurrencyCollectionViewCell.swift */,
+				7AAF1A911E31D5CC00467310 /* CurrencyCollectionViewCell.xib */,
+			);
+			name = WIP;
+			sourceTree = "<group>";
+		};
+		7A296A891E37377F007E445A /* Shared */ = {
+			isa = PBXGroup;
+			children = (
+				7A296A8C1E37384C007E445A /* Chartpoint.swift */,
+				7A296A871E373772007E445A /* NewsFeed.swift */,
+				7A296A8A1E3737CE007E445A /* Tweet.swift */,
+				7A296A8E1E3738A9007E445A /* Search.swift */,
+			);
+			name = Shared;
+			sourceTree = "<group>";
+		};
+		7A296AA71E384707007E445A /* Currency */ = {
+			isa = PBXGroup;
+			children = (
+				7A296AA11E3845A3007E445A /* Currency.swift */,
+				7A296AA31E384663007E445A /* CurrencyDetails.swift */,
+			);
+			name = Currency;
+			sourceTree = "<group>";
+		};
+		7A296AAA1E384748007E445A /* Index */ = {
+			isa = PBXGroup;
+			children = (
+				7A296AA51E3846F8007E445A /* Index.swift */,
+				7A296AA81E384736007E445A /* IndexDetails.swift */,
+			);
+			name = Index;
+			sourceTree = "<group>";
+		};
+		7A7D19EE1E443837005E90FE /* ArchiveViews */ = {
+			isa = PBXGroup;
+			children = (
+				7AE19C321E07C348009A6DF1 /* EquityDetailsCollectionViewCell.swift */,
+				7AE19C331E07C348009A6DF1 /* EquityDetailsCollectionViewCell.xib */,
+				7AE19C311E07C348009A6DF1 /* CustomCollectionViewLayout.swift */,
+			);
+			name = ArchiveViews;
+			sourceTree = "<group>";
+		};
+		7AAF1AA31E35E19100467310 /* Equity */ = {
+			isa = PBXGroup;
+			children = (
+				7AE19C031E07A46C009A6DF1 /* Equity.swift */,
+				7AE19C0E1E07A5E1009A6DF1 /* EquityDetails.swift */,
+			);
+			name = Equity;
+			sourceTree = "<group>";
+		};
 		7ADE87D01E079DB100518A91 = {
 			isa = PBXGroup;
 			children = (
@@ -160,6 +280,9 @@
 				7AE19BFC1E07A2D4009A6DF1 /* ChartFormatter.swift */,
 				7A0EE6F91E0C281C00C8830E /* ColorScheme.swift */,
 				7AE19C3E1E0925A0009A6DF1 /* UIImage Extension.swift */,
+				7AAF1A861E308EF400467310 /* UILabel Extension.swift */,
+				7A296A9A1E373FCE007E445A /* String Extension.swift */,
+				7A7D19E61E441C42005E90FE /* BottomAlignedLabel.swift */,
 			);
 			name = "Systems & Extensions";
 			sourceTree = "<group>";
@@ -167,9 +290,12 @@
 		7AE19BF91E07A230009A6DF1 /* Application */ = {
 			isa = PBXGroup;
 			children = (
+				7ADE87E51E079DB100518A91 /* LaunchScreen.storyboard */,
 				7ADE87E01E079DB100518A91 /* Main.storyboard */,
 				7ADE87DC1E079DB100518A91 /* AppDelegate.swift */,
-				7ADE87E51E079DB100518A91 /* LaunchScreen.storyboard */,
+				7A7D19EC1E442645005E90FE /* Temppp.swift */,
+				7A30CA991E248CC700B2CB61 /* SplitViewSupport.swift */,
+				7A296A861E372FC0007E445A /* WIP */,
 			);
 			name = Application;
 			sourceTree = "<group>";
@@ -185,12 +311,10 @@
 		7AE19C051E07A553009A6DF1 /* Models */ = {
 			isa = PBXGroup;
 			children = (
-				7AE19C031E07A46C009A6DF1 /* Equity.swift */,
-				7AE19C0C1E07A5BC009A6DF1 /* EquitySearch.swift */,
-				7AE19C0E1E07A5E1009A6DF1 /* EquityDetails.swift */,
-				7AE19C101E07A7B0009A6DF1 /* EquityChartpoint.swift */,
-				7AE19C121E07A7D6009A6DF1 /* EquityNewsFeed.swift */,
-				7AE19C141E07A80B009A6DF1 /* EquityTweet.swift */,
+				7A296A891E37377F007E445A /* Shared */,
+				7AAF1AA31E35E19100467310 /* Equity */,
+				7A296AA71E384707007E445A /* Currency */,
+				7A296AAA1E384748007E445A /* Index */,
 			);
 			name = Models;
 			sourceTree = "<group>";
@@ -207,6 +331,12 @@
 			isa = PBXGroup;
 			children = (
 				7AE19C091E07A59D009A6DF1 /* EquityApiClientProtocol.swift */,
+				7A296AAB1E3847A0007E445A /* CurrencyApiClientProtocol.swift */,
+				7A296AAD1E38480F007E445A /* IndexApiClientProtocol.swift */,
+				7A296A961E373AA2007E445A /* SearchApiClientProtocol.swift */,
+				7A296A901E373A3E007E445A /* ChartpointApiClientProtocol.swift */,
+				7A296A921E373A6A007E445A /* NewsFeedApiClientProtocol.swift */,
+				7A296A941E373A8C007E445A /* TweetApiClientProtocol.swift */,
 			);
 			name = Protocols;
 			sourceTree = "<group>";
@@ -218,12 +348,12 @@
 				7AE19C1C1E07A9EE009A6DF1 /* MainEquityCell.xib */,
 				7AE19C2C1E07BDE6009A6DF1 /* SearchEquityCell.swift */,
 				7AE19C2B1E07BDE6009A6DF1 /* SearchEquityCell.xib */,
-				7AE19C321E07C348009A6DF1 /* EquityDetailsCollectionViewCell.swift */,
-				7AE19C331E07C348009A6DF1 /* EquityDetailsCollectionViewCell.xib */,
-				7AE19C311E07C348009A6DF1 /* CustomCollectionViewLayout.swift */,
 				7AE19C351E07C348009A6DF1 /* EquityFeedDetailsCell.swift */,
 				7AE19C341E07C348009A6DF1 /* EquityFeedDetailsCell.xib */,
 				7AE19C161E07A87B009A6DF1 /* XMSegmentedControl.swift */,
+				7AAF1A881E31CE3B00467310 /* CAPSPageMenu.swift */,
+				7A7D19E41E441B15005E90FE /* KDCircularProgress.swift */,
+				7A7D19EE1E443837005E90FE /* ArchiveViews */,
 			);
 			name = Views;
 			sourceTree = "<group>";
@@ -231,7 +361,11 @@
 		7AE19C1F1E07A9FA009A6DF1 /* Network */ = {
 			isa = PBXGroup;
 			children = (
+				7A296A981E373BE5007E445A /* UrlEndpoints.swift */,
 				7AE19C191E07A88A009A6DF1 /* EquityNetworkManager.swift */,
+				7A296AAF1E38485E007E445A /* CurrencyNetworkManager.swift */,
+				7A296AB11E384898007E445A /* IndexNetworkManager.swift */,
+				7A296A9C1E3794A0007E445A /* SearchNetworkManager.swift */,
 			);
 			name = Network;
 			sourceTree = "<group>";
@@ -240,8 +374,8 @@
 			isa = PBXGroup;
 			children = (
 				7AE19C241E07AC30009A6DF1 /* EquityDataModel.swift */,
-				7AE19C291E07BB6C009A6DF1 /* SearchEquityDataModel.swift */,
 				7AE19C2F1E07C307009A6DF1 /* EquityDetailsDataModel.swift */,
+				7A296A9E1E3797DC007E445A /* SearchDataModel.swift */,
 			);
 			name = DataModels;
 			sourceTree = "<group>";
@@ -250,10 +384,11 @@
 			isa = PBXGroup;
 			children = (
 				7AE19BFE1E07A343009A6DF1 /* EquityDashboardTableViewController.swift */,
-				7AE19C221E07ABEA009A6DF1 /* SearchEquityViewController.swift */,
-				7AE19C401E0985C0009A6DF1 /* SearchEquityDetailsViewController.swift */,
 				7AE19C201E07ABD7009A6DF1 /* EquityDetailsViewController.swift */,
+				7A7D19EA1E442375005E90FE /* EquityDetailsViewControllerExtension.swift */,
+				7AE19C221E07ABEA009A6DF1 /* SearchEquityViewController.swift */,
 				7AE19C3B1E08CF30009A6DF1 /* StockTweetViewController.swift */,
+				7A30CA971E248C0500B2CB61 /* SplitViewController.swift */,
 			);
 			name = Controllers;
 			sourceTree = "<group>";
@@ -339,9 +474,11 @@
 			buildActionMask = 2147483647;
 			files = (
 				7ADE87E71E079DB100518A91 /* LaunchScreen.storyboard in Resources */,
+				7AAF1A931E31D5CC00467310 /* CurrencyCollectionViewCell.xib in Resources */,
 				7AE19C2D1E07BDE6009A6DF1 /* SearchEquityCell.xib in Resources */,
 				7AE19C391E07C348009A6DF1 /* EquityFeedDetailsCell.xib in Resources */,
 				7AE19C1E1E07A9EE009A6DF1 /* MainEquityCell.xib in Resources */,
+				7AAF1A971E31D5E200467310 /* IndicesTableViewCell.xib in Resources */,
 				7ADE87E41E079DB100518A91 /* Assets.xcassets in Resources */,
 				7AE19C381E07C348009A6DF1 /* EquityDetailsCollectionViewCell.xib in Resources */,
 				7ADE87E21E079DB100518A91 /* Main.storyboard in Resources */,
@@ -403,24 +540,40 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				7AAF1A891E31CE3B00467310 /* CAPSPageMenu.swift in Sources */,
 				7AE19C2E1E07BDE6009A6DF1 /* SearchEquityCell.swift in Sources */,
+				7A296A8F1E3738A9007E445A /* Search.swift in Sources */,
+				7A30CA9A1E248CC700B2CB61 /* SplitViewSupport.swift in Sources */,
+				7A296A9B1E373FCE007E445A /* String Extension.swift in Sources */,
 				7AE19C1A1E07A88A009A6DF1 /* EquityNetworkManager.swift in Sources */,
-				7AE19C2A1E07BB6C009A6DF1 /* SearchEquityDataModel.swift in Sources */,
-				7AE19C111E07A7B0009A6DF1 /* EquityChartpoint.swift in Sources */,
+				7A296AA21E3845A3007E445A /* Currency.swift in Sources */,
 				7AE19C251E07AC30009A6DF1 /* EquityDataModel.swift in Sources */,
+				7AAF1A871E308EF400467310 /* UILabel Extension.swift in Sources */,
 				7AE19C231E07ABEA009A6DF1 /* SearchEquityViewController.swift in Sources */,
 				7A0EE6FA1E0C281C00C8830E /* ColorScheme.swift in Sources */,
+				7A296AA41E384663007E445A /* CurrencyDetails.swift in Sources */,
+				7A296AA91E384736007E445A /* IndexDetails.swift in Sources */,
+				7A296AB21E384898007E445A /* IndexNetworkManager.swift in Sources */,
+				7A296A931E373A6A007E445A /* NewsFeedApiClientProtocol.swift in Sources */,
+				7AAF1A921E31D5CC00467310 /* CurrencyCollectionViewCell.swift in Sources */,
+				7AAF1A8D1E31D54A00467310 /* IndicesTableViewController.swift in Sources */,
 				7AE19BFB1E07A275009A6DF1 /* Formatters.swift in Sources */,
+				7AAF1A961E31D5E200467310 /* IndicesTableViewCell.swift in Sources */,
 				7AE19BFF1E07A343009A6DF1 /* EquityDashboardTableViewController.swift in Sources */,
 				7AE19C171E07A87B009A6DF1 /* XMSegmentedControl.swift in Sources */,
 				7AE19C0F1E07A5E1009A6DF1 /* EquityDetails.swift in Sources */,
 				7AE19C3F1E0925A0009A6DF1 /* UIImage Extension.swift in Sources */,
+				7A296A991E373BE5007E445A /* UrlEndpoints.swift in Sources */,
+				7A296A881E373772007E445A /* NewsFeed.swift in Sources */,
 				7AE19BF51E07A14D009A6DF1 /* Font.swift in Sources */,
+				7A7D19E51E441B15005E90FE /* KDCircularProgress.swift in Sources */,
+				7A296AAE1E38480F007E445A /* IndexApiClientProtocol.swift in Sources */,
+				7A296A8B1E3737CE007E445A /* Tweet.swift in Sources */,
 				7AE19C011E07A3AF009A6DF1 /* UserDefaultsManagement.swift in Sources */,
-				7AE19C151E07A80B009A6DF1 /* EquityTweet.swift in Sources */,
 				7AE19C301E07C307009A6DF1 /* EquityDetailsDataModel.swift in Sources */,
+				7A7D19EB1E442376005E90FE /* EquityDetailsViewControllerExtension.swift in Sources */,
 				7AE19BFD1E07A2D4009A6DF1 /* ChartFormatter.swift in Sources */,
-				7AE19C411E0985C0009A6DF1 /* SearchEquityDetailsViewController.swift in Sources */,
+				7A296AB01E38485E007E445A /* CurrencyNetworkManager.swift in Sources */,
 				7AE19C0A1E07A59D009A6DF1 /* EquityApiClientProtocol.swift in Sources */,
 				7AE19C371E07C348009A6DF1 /* EquityDetailsCollectionViewCell.swift in Sources */,
 				7AE19C3A1E07C348009A6DF1 /* EquityFeedDetailsCell.swift in Sources */,
@@ -428,12 +581,23 @@
 				7AE19C1D1E07A9EE009A6DF1 /* MainEquityCell.swift in Sources */,
 				7AE19C211E07ABD7009A6DF1 /* EquityDetailsViewController.swift in Sources */,
 				7AE19C3C1E08CF31009A6DF1 /* StockTweetViewController.swift in Sources */,
-				7AE19C131E07A7D6009A6DF1 /* EquityNewsFeed.swift in Sources */,
-				7AE19C0D1E07A5BC009A6DF1 /* EquitySearch.swift in Sources */,
+				7A296A911E373A3E007E445A /* ChartpointApiClientProtocol.swift in Sources */,
+				7A296AAC1E3847A0007E445A /* CurrencyApiClientProtocol.swift in Sources */,
+				7A7D19ED1E442645005E90FE /* Temppp.swift in Sources */,
+				7AAF1A8B1E31D3E100467310 /* MenuPagesViewController.swift in Sources */,
+				7AAF1A8F1E31D57C00467310 /* CurrenciesCollectionViewController.swift in Sources */,
+				7A7D19E71E441C42005E90FE /* BottomAlignedLabel.swift in Sources */,
+				7A296A971E373AA2007E445A /* SearchApiClientProtocol.swift in Sources */,
+				7A296A8D1E37384C007E445A /* Chartpoint.swift in Sources */,
+				7A296A9D1E3794A0007E445A /* SearchNetworkManager.swift in Sources */,
+				7A296A951E373A8C007E445A /* TweetApiClientProtocol.swift in Sources */,
 				7AE19C071E07A56B009A6DF1 /* ErrorHandling.swift in Sources */,
 				7AE19C041E07A46C009A6DF1 /* Equity.swift in Sources */,
 				7AE19C361E07C348009A6DF1 /* CustomCollectionViewLayout.swift in Sources */,
+				7A296AA61E3846F8007E445A /* Index.swift in Sources */,
 				7ADE87DD1E079DB100518A91 /* AppDelegate.swift in Sources */,
+				7A30CA981E248C0500B2CB61 /* SplitViewController.swift in Sources */,
+				7A296A9F1E3797DC007E445A /* SearchDataModel.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -557,10 +721,12 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				DEVELOPMENT_TEAM = KG5698275Z;
 				INFOPLIST_FILE = Uptick/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.3;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.chrisjkong.Uptick;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 3.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Debug;
 		};
@@ -571,10 +737,12 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				DEVELOPMENT_TEAM = KG5698275Z;
 				INFOPLIST_FILE = Uptick/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.3;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.chrisjkong.Uptick;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 3.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Release;
 		};

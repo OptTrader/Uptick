@@ -20,27 +20,39 @@
             <rect key="frame" x="0.0" y="0.0" width="320" height="60"/>
             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
             <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="KGk-i7-Jjw" id="H2p-sc-9uM">
-                <rect key="frame" x="0.0" y="0.0" width="320" height="59.5"/>
+                <rect key="frame" x="0.0" y="0.0" width="320" height="59"/>
                 <autoresizingMask key="autoresizingMask"/>
                 <subviews>
                     <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="top" translatesAutoresizingMaskIntoConstraints="NO" id="lim-51-fzW">
                         <rect key="frame" x="16" y="10.5" width="220" height="40"/>
                         <subviews>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Symbol" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="8AW-dy-pBV">
-                                <rect key="frame" x="0.0" y="0.0" width="58.5" height="23.5"/>
+                                <rect key="frame" x="0.0" y="0.0" width="220" height="23.5"/>
                                 <fontDescription key="fontDescription" name="AvenirNext-Regular" family="Avenir Next" pointSize="17"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Name" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ARm-TF-jIX">
-                                <rect key="frame" x="0.0" y="23.5" width="33.5" height="16.5"/>
-                                <fontDescription key="fontDescription" name="AvenirNext-Regular" family="Avenir Next" pointSize="12"/>
-                                <nil key="textColor"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" usesAttributedText="YES" lineBreakMode="clip" numberOfLines="0" baselineAdjustment="alignBaselines" minimumScaleFactor="0.25" adjustsLetterSpacingToFitWidth="YES" translatesAutoresizingMaskIntoConstraints="NO" id="ARm-TF-jIX">
+                                <rect key="frame" x="0.0" y="23.5" width="220" height="16.5"/>
+                                <attributedString key="attributedText">
+                                    <fragment content="Name">
+                                        <attributes>
+                                            <font key="NSFont" size="12" name="AvenirNext-Regular"/>
+                                            <paragraphStyle key="NSParagraphStyle" alignment="left" lineBreakMode="truncatingTail" baseWritingDirection="natural" tighteningFactorForTruncation="0.0"/>
+                                        </attributes>
+                                    </fragment>
+                                </attributedString>
                                 <nil key="highlightedColor"/>
                             </label>
                         </subviews>
                         <constraints>
+                            <constraint firstAttribute="bottom" secondItem="ARm-TF-jIX" secondAttribute="bottom" id="3bH-6y-ZKB"/>
                             <constraint firstAttribute="width" constant="220" id="BjP-tn-vgY"/>
+                            <constraint firstAttribute="trailing" secondItem="ARm-TF-jIX" secondAttribute="trailing" id="GpW-j2-sA4"/>
+                            <constraint firstAttribute="trailing" secondItem="8AW-dy-pBV" secondAttribute="trailing" id="Kqg-2t-ug9"/>
+                            <constraint firstItem="8AW-dy-pBV" firstAttribute="top" secondItem="lim-51-fzW" secondAttribute="top" id="dy8-T6-PQ1"/>
+                            <constraint firstItem="8AW-dy-pBV" firstAttribute="leading" secondItem="lim-51-fzW" secondAttribute="leading" id="gi1-3Q-OOc"/>
+                            <constraint firstItem="ARm-TF-jIX" firstAttribute="leading" secondItem="lim-51-fzW" secondAttribute="leading" id="s9z-fK-Ihf"/>
                         </constraints>
                     </stackView>
                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="AxF-hP-V6v">

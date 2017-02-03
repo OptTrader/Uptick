@@ -1,0 +1,191 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="11762" systemVersion="16C67" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11757"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="CurrencyCollectionViewCell" id="gTV-IL-0wX" customClass="CurrencyCollectionViewCell" customModule="Uptick" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="170" height="105"/>
+            <autoresizingMask key="autoresizingMask"/>
+            <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
+                <rect key="frame" x="0.0" y="0.0" width="170" height="105"/>
+                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                <subviews>
+                    <view clipsSubviews="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="TLy-Xc-6ZL">
+                        <rect key="frame" x="0.0" y="0.0" width="170" height="105"/>
+                        <subviews>
+                            <stackView opaque="NO" contentMode="scaleToFill" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="k7P-dB-4Wv">
+                                <rect key="frame" x="14" y="8" width="143" height="33"/>
+                                <subviews>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" usesAttributedText="YES" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="k94-Xm-DAR">
+                                        <rect key="frame" x="0.0" y="0.0" width="54" height="33"/>
+                                        <attributedString key="attributedText">
+                                            <fragment content="EUR/USD">
+                                                <attributes>
+                                                    <color key="NSColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                                    <font key="NSFont" size="12.5" name="AvenirNext-Regular"/>
+                                                </attributes>
+                                            </fragment>
+                                        </attributedString>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="dIU-FI-ohx">
+                                        <rect key="frame" x="64" y="0.0" width="79" height="33"/>
+                                        <subviews>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" usesAttributedText="YES" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="rah-K4-dnc">
+                                                <rect key="frame" x="0.0" y="0.0" width="79" height="20.5"/>
+                                                <attributedString key="attributedText">
+                                                    <fragment content="1.0652">
+                                                        <attributes>
+                                                            <color key="NSColor" red="0.12941176470588234" green="0.80392156862745101" blue="0.59999999999999998" alpha="1" colorSpace="calibratedRGB"/>
+                                                            <font key="NSFont" size="15" name="AvenirNext-Regular"/>
+                                                            <paragraphStyle key="NSParagraphStyle" alignment="center" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0"/>
+                                                        </attributes>
+                                                    </fragment>
+                                                </attributedString>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" usesAttributedText="YES" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="cRz-6u-YDX">
+                                                <rect key="frame" x="0.0" y="20.5" width="79" height="12.5"/>
+                                                <attributedString key="attributedText">
+                                                    <fragment content="+0.00678 [+0.64%]">
+                                                        <attributes>
+                                                            <color key="NSColor" red="0.12941176470588234" green="0.80392156862745101" blue="0.59999999999999998" alpha="1" colorSpace="calibratedRGB"/>
+                                                            <font key="NSFont" size="9" name="AvenirNext-Regular"/>
+                                                            <paragraphStyle key="NSParagraphStyle" alignment="right" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0"/>
+                                                        </attributes>
+                                                    </fragment>
+                                                </attributedString>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                        </subviews>
+                                    </stackView>
+                                </subviews>
+                            </stackView>
+                            <view clipsSubviews="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Sa1-f8-ZtZ" userLabel="Ask View">
+                                <rect key="frame" x="92" y="47" width="70" height="50"/>
+                                <subviews>
+                                    <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="h9R-WR-Jrj">
+                                        <rect key="frame" x="7" y="6" width="57" height="39"/>
+                                        <subviews>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" usesAttributedText="YES" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="vca-Pv-A1z">
+                                                <rect key="frame" x="0.0" y="0.0" width="57" height="25"/>
+                                                <attributedString key="attributedText">
+                                                    <fragment content="1.0658">
+                                                        <attributes>
+                                                            <color key="NSColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
+                                                            <font key="NSFont" size="18" name="AvenirNext-Regular"/>
+                                                            <paragraphStyle key="NSParagraphStyle" alignment="center" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0"/>
+                                                        </attributes>
+                                                    </fragment>
+                                                </attributedString>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" usesAttributedText="YES" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="GPt-G4-ALL">
+                                                <rect key="frame" x="0.0" y="25" width="57" height="14"/>
+                                                <attributedString key="attributedText">
+                                                    <fragment content="Ask">
+                                                        <attributes>
+                                                            <color key="NSColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
+                                                            <font key="NSFont" size="10" name="AvenirNext-Regular"/>
+                                                            <paragraphStyle key="NSParagraphStyle" alignment="center" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0"/>
+                                                        </attributes>
+                                                    </fragment>
+                                                </attributedString>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                        </subviews>
+                                    </stackView>
+                                </subviews>
+                                <color key="backgroundColor" red="0.12941176469999999" green="0.80392156859999997" blue="0.59999999999999998" alpha="1" colorSpace="calibratedRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="50" id="5UR-aD-1xo"/>
+                                    <constraint firstItem="h9R-WR-Jrj" firstAttribute="centerY" secondItem="Sa1-f8-ZtZ" secondAttribute="centerY" id="NFE-mm-6pp"/>
+                                    <constraint firstAttribute="width" constant="70" id="Tny-HT-Hk1"/>
+                                    <constraint firstItem="h9R-WR-Jrj" firstAttribute="centerX" secondItem="Sa1-f8-ZtZ" secondAttribute="centerX" id="okc-dp-eHA"/>
+                                </constraints>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                                        <integer key="value" value="5"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
+                            </view>
+                            <view clipsSubviews="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="QNA-v7-I9l" userLabel="Bid View">
+                                <rect key="frame" x="8" y="47" width="70" height="50"/>
+                                <subviews>
+                                    <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="R0v-Wh-5Am">
+                                        <rect key="frame" x="7" y="6" width="57" height="39"/>
+                                        <subviews>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" usesAttributedText="YES" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="cDr-8I-gjw">
+                                                <rect key="frame" x="0.0" y="0.0" width="57" height="25"/>
+                                                <attributedString key="attributedText">
+                                                    <fragment content="1.0657">
+                                                        <attributes>
+                                                            <color key="NSColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
+                                                            <font key="NSFont" size="18" name="AvenirNext-Regular"/>
+                                                            <paragraphStyle key="NSParagraphStyle" alignment="center" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0"/>
+                                                        </attributes>
+                                                    </fragment>
+                                                </attributedString>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" usesAttributedText="YES" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="lPA-kA-rSg">
+                                                <rect key="frame" x="0.0" y="25" width="57" height="14"/>
+                                                <attributedString key="attributedText">
+                                                    <fragment content="Bid">
+                                                        <attributes>
+                                                            <color key="NSColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
+                                                            <font key="NSFont" size="10" name="AvenirNext-Regular"/>
+                                                            <paragraphStyle key="NSParagraphStyle" alignment="center" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0"/>
+                                                        </attributes>
+                                                    </fragment>
+                                                </attributedString>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                        </subviews>
+                                    </stackView>
+                                </subviews>
+                                <color key="backgroundColor" red="0.95686274510000002" green="0.3294117647" blue="0.18823529410000001" alpha="1" colorSpace="calibratedRGB"/>
+                                <constraints>
+                                    <constraint firstItem="R0v-Wh-5Am" firstAttribute="centerX" secondItem="QNA-v7-I9l" secondAttribute="centerX" id="9E9-y5-god"/>
+                                    <constraint firstItem="R0v-Wh-5Am" firstAttribute="centerX" secondItem="QNA-v7-I9l" secondAttribute="centerX" id="Bh2-iK-6Kz"/>
+                                    <constraint firstAttribute="width" constant="70" id="Lsy-xh-tmu"/>
+                                    <constraint firstAttribute="height" constant="50" id="RR1-pE-MPf"/>
+                                    <constraint firstItem="R0v-Wh-5Am" firstAttribute="centerY" secondItem="QNA-v7-I9l" secondAttribute="centerY" id="cMu-4o-tcH"/>
+                                    <constraint firstItem="R0v-Wh-5Am" firstAttribute="centerY" secondItem="QNA-v7-I9l" secondAttribute="centerY" id="yrV-QT-PvP"/>
+                                </constraints>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                                        <integer key="value" value="5"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
+                            </view>
+                        </subviews>
+                        <color key="backgroundColor" red="0.2470588235" green="0.2470588235" blue="0.2470588235" alpha="1" colorSpace="calibratedRGB"/>
+                        <constraints>
+                            <constraint firstItem="k7P-dB-4Wv" firstAttribute="top" secondItem="TLy-Xc-6ZL" secondAttribute="top" constant="8" id="9yg-4y-amP"/>
+                            <constraint firstAttribute="bottom" secondItem="QNA-v7-I9l" secondAttribute="bottom" constant="8" id="Q4H-iW-6w2"/>
+                            <constraint firstAttribute="trailing" secondItem="Sa1-f8-ZtZ" secondAttribute="trailing" constant="8" id="XQ2-Uq-bxh"/>
+                            <constraint firstItem="QNA-v7-I9l" firstAttribute="leading" secondItem="TLy-Xc-6ZL" secondAttribute="leading" constant="8" id="suv-NW-QP9"/>
+                            <constraint firstAttribute="bottom" secondItem="Sa1-f8-ZtZ" secondAttribute="bottom" constant="8" id="v9F-n5-ckP"/>
+                            <constraint firstItem="k7P-dB-4Wv" firstAttribute="centerX" secondItem="TLy-Xc-6ZL" secondAttribute="centerX" id="ywY-Ew-pFM"/>
+                        </constraints>
+                    </view>
+                </subviews>
+            </view>
+            <constraints>
+                <constraint firstAttribute="bottom" secondItem="TLy-Xc-6ZL" secondAttribute="bottom" id="Lou-zN-5od"/>
+                <constraint firstItem="TLy-Xc-6ZL" firstAttribute="top" secondItem="gTV-IL-0wX" secondAttribute="top" id="MQ2-VF-rwL"/>
+                <constraint firstItem="TLy-Xc-6ZL" firstAttribute="leading" secondItem="gTV-IL-0wX" secondAttribute="leading" id="jjz-Cx-JVm"/>
+                <constraint firstAttribute="trailing" secondItem="TLy-Xc-6ZL" secondAttribute="trailing" id="pVH-oT-dNh"/>
+            </constraints>
+        </collectionViewCell>
+    </objects>
+</document>

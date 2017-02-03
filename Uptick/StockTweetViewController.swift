@@ -16,7 +16,7 @@ class StockTweetViewController: UIViewController {
     @IBOutlet weak var tweetTextView: UITextView!
     @IBOutlet weak var imageView: UIImageView!
     
-    var selectedTweet: EquityTweet?
+    var selectedTweet: Tweet?
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -41,32 +41,25 @@ class StockTweetViewController: UIViewController {
         profilePictureImageView.layer.borderColor = UIColor.black.cgColor
         profilePictureImageView.layer.cornerRadius = profilePictureImageView.frame.height/2
         profilePictureImageView.clipsToBounds = true
-        
-        
     }
     
     fileprivate func configureData() {
         if let tweet = selectedTweet {
-            title = tweet.title!
+//            title = tweet.title!
             userLabel.text = "\(tweet.name!) @\(tweet.userName!)"
             sinceCreatedDate.text = tweet.sinceCreated!
             tweetTextView.text = tweet.tweet!
             profilePictureImageView.image = nil
             profilePictureImageView.downloadedFrom(link: tweet.avatarUrl!)
-            imageView.image = nil
-            imageView.downloadedFrom(link: tweet.imageUrl!)
+//            imageView.image = nil
+//            imageView.downloadedFrom(link: tweet.imageUrl!)
         } else {
-            title = ""
+//            title = ""
             userLabel.text = ""
             sinceCreatedDate.text = ""
             tweetTextView.text = ""
             profilePictureImageView.image = nil
-            imageView.image = nil
+//            imageView.image = nil
         }
     }
-    
-
-    
-    
 }
-

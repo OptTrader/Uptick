@@ -18,6 +18,7 @@ public class Formatters {
     private let dateKeyFormatter = DateFormatter()
     private let timeKeyFormatter = DateFormatter()
     private let percentFormatter = NumberFormatter()
+    private let flatPercentFormatter = NumberFormatter()
     private let currencyFormatter = NumberFormatter()
     private let numberFormatter = NumberFormatter()
     private let numberChangeFormatter = NumberFormatter()
@@ -31,6 +32,8 @@ public class Formatters {
         publishDateFormatter.locale = Locale(identifier: "en_US_POSIX")
         publishDateFormatter.dateFormat = "EEE, dd MMM yyyy HH:mm:ss ZZZZ"
         createDateFormatter.dateFormat = "yyyy-MM-dd'T'HH:mm:ss'Z'"
+        createDateFormatter.timeZone = TimeZone(abbreviation: "GMT")
+        createDateFormatter.locale = Locale(identifier: "en_US_POSIX")
         dateKeyFormatter.locale = Locale.current
         dateKeyFormatter.timeZone = TimeZone(abbreviation: "GMT")
         dateKeyFormatter.dateFormat = "yyyy-MM-dd"
@@ -39,6 +42,8 @@ public class Formatters {
         timeKeyFormatter.dateFormat = "h:mm a"
         percentFormatter.numberStyle = .percent
         percentFormatter.minimumFractionDigits = 2
+        flatPercentFormatter.numberStyle = .percent
+        flatPercentFormatter.minimumFractionDigits = 0
         currencyFormatter.usesGroupingSeparator = true
         currencyFormatter.numberStyle = .currency
         currencyFormatter.maximumFractionDigits = 2
@@ -98,6 +103,11 @@ public class Formatters {
     public func stringFromPercent(percent: Double?) -> String? {
         guard let percent = percent else { return nil }
         return percentFormatter.string(from: NSNumber(value: percent))
+    }
+    
+    public func stringFromFlatPercent(percent: Double?) -> String? {
+        guard let percent = percent else { return nil }
+        return flatPercentFormatter.string(from: NSNumber(value: percent))
     }
     
     public func stringFromNumber(number: Double?) -> String? {

@@ -13,7 +13,6 @@ import Pantry
 struct Equity {
     var companyName: String?
     var symbol: String?
-    var exchange: String?
     var lastTradePrice: Double?
     var previousClosePrice: Double?
     var changeInPrice: Double?
@@ -24,11 +23,15 @@ extension Equity {
     init(json: JSON) {
         self.companyName = json["Name"].stringValue
         self.symbol = json["Symbol"].stringValue
-        self.exchange = json["StockExchange"].stringValue
         self.lastTradePrice = json["LastTradePriceOnly"].doubleValue
         self.previousClosePrice = json["PreviousClose"].doubleValue
         self.changeInPrice = json["Change"].doubleValue
-        self.changeInPercent = self.changeInPrice! / self.previousClosePrice!
+        
+        if (self.changeInPrice != nil) && (self.previousClosePrice != nil) {
+            self.changeInPercent = self.changeInPrice! / self.previousClosePrice!
+        } else {
+            self.changeInPercent = 0.00
+        }
     }
 }
 
@@ -36,7 +39,6 @@ extension Equity: Storable {
     init?(warehouse: Warehouseable) {
         self.companyName = warehouse.get(PropertyKey.companyNameKey) ?? ""
         self.symbol = warehouse.get(PropertyKey.symbolKey) ?? ""
-        self.exchange = warehouse.get(PropertyKey.exchangeKey) ?? ""
         self.lastTradePrice = warehouse.get(PropertyKey.lastTradePriceKey) ?? 0.0
         self.changeInPrice = warehouse.get(PropertyKey.changeInPriceKey) ?? 0.0
         self.changeInPercent = warehouse.get(PropertyKey.changeInPercentKey) ?? 0.0
@@ -45,7 +47,6 @@ extension Equity: Storable {
     func toDictionary() -> [String : Any] {
         return [PropertyKey.companyNameKey : self.companyName ?? "",
                 PropertyKey.symbolKey : self.symbol ?? "",
-                PropertyKey.exchangeKey : self.exchange ?? "",
                 PropertyKey.lastTradePriceKey : self.lastTradePrice ?? 0.0,
                 PropertyKey.changeInPriceKey : self.changeInPrice ?? 0.0,
                 PropertyKey.changeInPercentKey : self.changeInPercent ?? 0.0
@@ -55,7 +56,6 @@ extension Equity: Storable {
     struct PropertyKey {
         static let companyNameKey = "companyName"
         static let symbolKey = "symbol"
-        static let exchangeKey = "exchange"
         static let lastTradePriceKey = "lastTradePrice"
         static let changeInPriceKey = "changeInPrice"
         static let changeInPercentKey = "changeInPercent"

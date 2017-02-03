@@ -21,35 +21,55 @@ class EquityDetailsViewController: UIViewController {
 
     // MARK: Outlets & Properties
     
-    @IBOutlet weak var lastTradePriceLabel: UILabel!
-    @IBOutlet weak var priceChangesLabel: UILabel!
+    @IBOutlet weak var companyNameLabel: UILabel!
+    @IBOutlet weak var leftViewMainLabel: BottomAlignedLabel!
+    @IBOutlet weak var leftViewButton: UIButton!
+    @IBOutlet weak var leftViewSubLabel: UILabel!
+    @IBOutlet weak var rightViewMainLabel: UILabel!
+    @IBOutlet weak var circularProgressView: KDCircularProgress!
+    @IBOutlet weak var rightViewButton: UIButton!
+    @IBOutlet weak var rightViewSubLabel: UILabel!
     @IBOutlet weak var lineChartView: LineChartView!
     @IBOutlet weak var rangeSegmentedControl: XMSegmentedControl!
-    @IBOutlet weak var collectionView: UICollectionView?
     @IBOutlet weak var feedsSegmentedControl: UISegmentedControl!
     @IBOutlet weak var tableView: UITableView?
-
-    var selectedEquity: Equity?
+    
+    var equitySymbol = "AAPL"
+    
     private let datasource = EquityDetailsDataModel()
-    fileprivate var equityDetails: EquityDetails? {
+    var equityDetails: EquityDetails? {
         didSet {
-            collectionView?.reloadData()
+            configureDefaultStateLeftView()
+            configureDefaultStateRightView()
+            
+            // what about the rest?
         }
     }
-    fileprivate var newsFeed = [EquityNewsFeed]() {
-        didSet {
-            tableView?.reloadData()
-        }
-    }
-    fileprivate var tweets = [EquityTweet]() {
+    var newsFeed = [NewsFeed]() {
         didSet {
             tableView?.reloadData()
         }
     }
-    fileprivate var chartRangeDelegate: ChartViewRangeDelegate!
-    fileprivate var priceChangeViewState = 0
-    fileprivate var collectionViewLayout: CustomCollectionViewLayout!
-    fileprivate var errorBanner: Banner?
+    var tweets = [Tweet]() {
+        didSet {
+            tableView?.reloadData()
+        }
+    }
+    var chartRangeDelegate: ChartViewRangeDelegate!
+    var leftViewState = 0
+    var rightViewState = 0
+    var priceChangeViewState = 0
+    var errorBanner: Banner?
+    var addButton: UIButton?
+    var isAdded: Bool = false {
+        didSet {
+            if isAdded {
+                addButton?.setImage(UIImage(named: ImageView.check), for: .normal)
+            } else {
+                addButton?.setImage(UIImage(named: ImageView.add), for: .normal)
+            }
+        }
+    }
     
     // MARK: View Life Cycle
     
@@ -59,9 +79,6 @@ class EquityDetailsViewController: UIViewController {
         configureChartView()
         lineChartView.delegate = self
         chartRangeDelegate = self
-        collectionView?.register(EquityDetailsCollectionViewCell.nib, forCellWithReuseIdentifier: EquityDetailsCollectionViewCell.identifier)
-        collectionView?.delegate = self
-        collectionView?.dataSource = self
         tableView?.register(EquityFeedDetailsCell.nib, forCellReuseIdentifier: EquityFeedDetailsCell.identifier)
         tableView?.delegate = self
         tableView?.dataSource = self
@@ -83,64 +100,224 @@ class EquityDetailsViewController: UIViewController {
     
     // MARK: Methods
     
-    fileprivate func configureView() {
+    func configureView() {
         // Spinner
         SwiftSpinner.useContainerView(self.view)
         SwiftSpinner.setTitleFont(Font.spinner)
-        
-        // CollectionView
-        collectionViewLayout = CustomCollectionViewLayout()
-        collectionView?.collectionViewLayout = collectionViewLayout
-        collectionView?.contentInset = UIEdgeInsetsMake(0, 0, 0, 0)
-        collectionView?.backgroundColor = UIColor.clear
         
         // TableView
         tableView?.backgroundColor = ColorScheme.primaryBackgroundColor
         tableView?.separatorColor = ColorScheme.cellSeparatorColor
         
         // Labels
-        self.lastTradePriceLabel.textColor = ColorScheme.primaryPriceInDetailsTextColor
-        self.priceChangesLabel.textColor = UIColor.white
+        self.leftViewMainLabel.text = ""
+        self.leftViewSubLabel.text = ""
+        self.rightViewMainLabel.text = ""
+        self.leftViewSubLabel.text = ""
+        self.companyNameLabel.text = ""
+
+        // Add Button
+        addButton = UIButton(frame: CGRect(x: 0, y: 0, width: 30, height: 30))
+        addButton?.setImage(UIImage(named: ImageView.add), for: .normal)
+        addButton?.addTarget(self, action: #selector(addButtonPressed(_:)), for: .touchUpInside)
+        let rightBarButton = UIBarButtonItem()
+        rightBarButton.customView = addButton
+        self.navigationItem.rightBarButtonItem = rightBarButton
+        
+        // StackView Buttons
+        leftViewButton.contentEdgeInsets = UIEdgeInsets(top: 0, left: 0, bottom: 0, right: 0)
+        rightViewButton.contentEdgeInsets = UIEdgeInsets(top: 0, left: 0, bottom: 0, right: 0)
+        
+        // Circular Progress View
+        circularProgressView.startAngle = -90
+        circularProgressView.progressThickness = 0.4
+        circularProgressView.trackThickness = 0.5
+        circularProgressView.clockwise = true
+        circularProgressView.gradientRotateSpeed = 2
+        circularProgressView.roundedCorners = false
+        circularProgressView.glowMode = .noGlow
+        circularProgressView.angle = 0.0
     }
     
-    fileprivate func configureData() {
-        title = selectedEquity?.symbol
-        self.datasource.requestData(stockSymbol: (selectedEquity?.symbol)!)
-        networkCall(range: .OneDay, symbol: (selectedEquity?.symbol)!)
-        fetchNewsFeed(symbol: (selectedEquity?.symbol)!)
-        fetchStockTwits(symbol: (selectedEquity?.symbol)!)
+    func configureData() {
+        title = equitySymbol
         
-        if let lastTradePrice = selectedEquity?.lastTradePrice {
-            var lastTradeString = Formatters.sharedInstance.stringFromPrice(price: lastTradePrice, currencyCode: "USD")
-            let attributedString = NSMutableAttributedString(string: lastTradeString!)
-            let letterSpacing: Float = -5.00
-            attributedString.addAttribute(NSKernAttributeName, value: (letterSpacing), range: NSMakeRange(0, (lastTradeString?.characters.count)!))
-            self.lastTradePriceLabel.attributedText = attributedString
+        self.datasource.requestData(stockSymbol: equitySymbol)
+        fetchNewsFeed(symbol: equitySymbol)
+        fetchStockTwits(symbol: equitySymbol)
+        
+        // check against UserDefaults
+        let symbols = UserDefaultsManagement.getTickers()
+        if symbols.contains(equitySymbol) {
+            isAdded = true
         } else {
-            self.lastTradePriceLabel.text = ""
+            isAdded = false
+        }
+    }
+    
+    @IBAction func leftViewButtonPressed(_ sender: UIButton) {
+        if leftViewState < 2 {
+            leftViewState += 1
+        } else {
+            leftViewState = 0
+        }
+        let viewState = leftViewState
+        switch viewState {
+            case _ where viewState == 1:
+                configureFirstStateLeftView()
+            case _ where viewState == 2:
+                configureSecondStateLeftView()
+            default:
+                configureDefaultStateLeftView()
+        }
+    }
+    
+    @IBAction func rightViewButtonPressed(_ sender: UIButton) {
+        if rightViewState < 2 {
+            rightViewState += 1
+        } else {
+            rightViewState = 0
         }
         
-        if let changeInPrice = selectedEquity?.changeInPrice, let changeInPercent = selectedEquity?.changeInPercent {
-            var priceChangesString = Formatters.sharedInstance.stringFromPrice(price: changeInPrice, currencyCode: "USD")! + " [" + Formatters.sharedInstance.stringFromPercent(percent: changeInPercent)! + "]"
-            let attributedString = NSMutableAttributedString(string: priceChangesString)
-            let letterSpacing: Float = -0.50
-            attributedString.addAttribute(NSKernAttributeName, value: (letterSpacing), range: NSMakeRange(0, (priceChangesString.characters.count)))
-            self.priceChangesLabel.attributedText = attributedString
-            
-            if changeInPrice > 0.0 {
-                self.priceChangesLabel.textColor = ColorScheme.uptickViewColor
-                self.priceChangeViewState = 1
-            } else if changeInPrice < 0.0 {
-                self.priceChangesLabel.textColor = ColorScheme.downtickViewColor
-                self.priceChangeViewState = 2
+        let viewState = rightViewState
+        switch viewState {
+            case _ where viewState == 1:
+                configureFirstStateRightView()
+            case _ where viewState == 2:
+                configureSecondStateRightView()
+            default:
+                configureDefaultStateRightView()
+        }
+    }
+ 
+    // MARK: Left StackView Configuration
+    
+    func configureDefaultStateLeftView() {
+        self.leftViewButton.setTitle("Last Trade", for: .normal)
+        if (equityDetails?.lastTradePrice != nil) && (equityDetails?.changeInPrice != nil) && (equityDetails?.changeInPercent != nil) {
+            if let lastTrade = equityDetails?.lastTradePrice, let changeInPrice = equityDetails?.changeInPrice, let changeInPercent = equityDetails?.changeInPercent {
+                self.leftViewMainLabel.attributedText = String.formatPriceLabel(text: Formatters.sharedInstance.stringFromNumber(number: lastTrade)!, priceSpacing: -5, decimalSpacing: -2)
+                let priceChangesString = Formatters.sharedInstance.stringFromChangeNumber(number: changeInPrice)! + " [" + Formatters.sharedInstance.stringFromPercent(percent: changeInPercent)! + "]"
+                self.leftViewSubLabel.attributedText = String.formatDefaultLabel(text: priceChangesString, spacing: -0.50)
+                
+                let viewState = self.priceChangeViewState
+                switch viewState {
+                    case _ where viewState == 1:
+                        return self.leftViewSubLabel.textColor = ColorScheme.uptickViewColor
+                    case _ where viewState == 2:
+                        return self.leftViewSubLabel.textColor = ColorScheme.downtickViewColor
+                    default:
+                        return self.leftViewSubLabel.textColor = UIColor.white
+                }
             }
         } else {
-            self.priceChangesLabel.text = "$0.00 [0.0%]"
-            self.priceChangeViewState = 0
+            self.leftViewMainLabel.text = ""
+            self.leftViewSubLabel.text = ""
+
         }
     }
     
-    fileprivate func handleLoadEquityDetailsError(_ error: Error) {
+    func configureFirstStateLeftView() {
+        self.leftViewButton.setTitle("Open", for: .normal)
+        if (equityDetails?.open != nil) && (equityDetails?.bid != nil) && (equityDetails?.ask != nil) {
+            if let openPrice = equityDetails?.open, let bidPrice = equityDetails?.bid, let askPrice = equityDetails?.ask {
+                self.leftViewMainLabel.attributedText = String.formatPriceLabel(text: Formatters.sharedInstance.stringFromNumber(number: openPrice)!, priceSpacing: -5, decimalSpacing: -2)
+                let bidAskString = "Bid " + Formatters.sharedInstance.stringFromNumber(number: bidPrice)! + "  |  Ask " + Formatters.sharedInstance.stringFromNumber(number: askPrice)!
+                self.leftViewSubLabel.attributedText = String.formatDefaultLabel(text: bidAskString, spacing: -0.50)
+                self.leftViewSubLabel.textColor = UIColor.white
+            }
+        } else {
+            self.leftViewMainLabel.text = ""
+            self.leftViewSubLabel.text = ""
+            self.leftViewSubLabel.textColor = UIColor.white
+        }
+    }
+    
+    // TO TEST!!!!
+    
+    func configureSecondStateLeftView() {
+        self.leftViewButton.setTitle("Market Cap", for: .normal)
+        if (equityDetails?.marketCap != nil) && (equityDetails?.priceEarningsRatio != nil) && (equityDetails?.dividendYield != nil) {
+            if let marketCap = equityDetails?.marketCap, let peRatio = equityDetails?.priceEarningsRatio, let dividendYield = equityDetails?.dividendYield {
+                
+                self.leftViewMainLabel.attributedText = String.formatMarketCapLabel(text: marketCap, numberSpacing: -5, textSpacing: -2)
+                let peDividendString = "PE " + Formatters.sharedInstance.stringFromNumber(number: peRatio)! + "  |  Div Yield " + Formatters.sharedInstance.stringFromPercent(percent: dividendYield)!
+                self.leftViewSubLabel.attributedText = String.formatDefaultLabel(text: peDividendString, spacing: -0.50)
+                self.leftViewSubLabel.textColor = UIColor.white
+            }
+        } else {
+            self.leftViewMainLabel.text = ""
+            self.leftViewSubLabel.text = ""
+            self.leftViewSubLabel.textColor = UIColor.white
+        }
+    }
+    
+    // MARK: Right StackView Configuration
+    
+    func configureDefaultStateRightView() {
+        self.rightViewButton.setTitle("Day's Range", for: .normal)
+        if (equityDetails?.lastTradePrice != nil) && (equityDetails?.dailyLow != nil) && (equityDetails?.dailyHigh != nil) {
+            if let lastTrade = equityDetails?.lastTradePrice, let dayLow = equityDetails?.dailyLow, let dayHigh = equityDetails?.dailyHigh {
+                let dayRange = dayHigh - dayLow
+                let lastTradeOverDayLow = lastTrade - dayLow
+                let dayRangePercent = lastTradeOverDayLow / dayRange
+                self.rightViewMainLabel.text = ""
+                circularProgressView.animate(fromAngle: 0, toAngle: dayRangePercent * 360, duration: 3) { completed in
+                }
+                let dayRangeString = "L " + Formatters.sharedInstance.stringFromNumber(number: dayLow)! + "  H " + Formatters.sharedInstance.stringFromNumber(number: dayHigh)!
+                self.rightViewSubLabel.attributedText = String.formatDefaultLabel(text: dayRangeString, spacing: -0.50)
+            }
+        } else {
+            self.rightViewMainLabel.text = ""
+            self.rightViewSubLabel.text = ""
+            circularProgressView.angle = 0.0
+        }
+    }
+    
+    func configureFirstStateRightView() {
+        self.rightViewButton.setTitle("52 Week Range", for: .normal)
+        if (equityDetails?.lastTradePrice != nil) && (equityDetails?.yearLow != nil) && (equityDetails?.yearHigh != nil) {
+            if let lastTrade = equityDetails?.lastTradePrice, let yearLow = equityDetails?.yearLow, let yearHigh = equityDetails?.yearHigh {
+                let yearRange = yearHigh - yearLow
+                let lastTradeOverYearLow = lastTrade - yearLow
+                let yearRangePercent = lastTradeOverYearLow / yearRange
+                self.rightViewMainLabel.text = ""
+                circularProgressView.animate(fromAngle: 0, toAngle: yearRangePercent * 360, duration: 3) { completed in
+                }
+                let yearRangeString = "L " + Formatters.sharedInstance.stringFromNumber(number: yearLow)! + "  H " + Formatters.sharedInstance.stringFromNumber(number: yearHigh)!
+                self.rightViewSubLabel.attributedText = String.formatDefaultLabel(text: yearRangeString, spacing: -0.50)
+            }
+        } else {
+            self.rightViewMainLabel.text = ""
+            self.rightViewSubLabel.text = ""
+            circularProgressView.angle = 0.0
+        }
+    }
+    
+    func configureSecondStateRightView() {
+        self.rightViewButton.setTitle("% Avg Volume", for: .normal)
+        if (equityDetails?.currentVolume != nil) && (equityDetails?.averageDailyVolume != nil) {
+            if let currentVolume = equityDetails?.currentVolume, let averageDailyVolume = equityDetails?.averageDailyVolume {
+                let averageVolumePercent = Double(currentVolume) / Double(averageDailyVolume)
+                self.rightViewMainLabel.attributedText = String.formatDefaultLabel(text: Formatters.sharedInstance.stringFromFlatPercent(percent: averageVolumePercent)!, spacing: -1.50)
+                circularProgressView.animate(fromAngle: 0, toAngle: averageVolumePercent * 360, duration: 3) { completed in
+                }
+                let currentVolumeString = "Volume  " + Formatters.sharedInstance.stringFromInt(int: currentVolume)!
+                self.rightViewSubLabel.attributedText = String.formatDefaultLabel(text: currentVolumeString, spacing: -0.50)
+            }
+        } else {
+            self.rightViewMainLabel.text = ""
+            self.rightViewSubLabel.text = ""
+            circularProgressView.angle = 0.0
+        }
+    }
+    
+    
+    
+    
+    // Network Error
+    
+    func handleLoadEquityDetailsError(_ error: Error) {
         print("Equity Details Fetching Error: \(error.localizedDescription)")
         switch error {
             case APIManagerError.network(let innerError as NSError):
@@ -164,7 +341,7 @@ class EquityDetailsViewController: UIViewController {
         }
     }
     
-    fileprivate func showNotConnectedBanner() {
+    func showNotConnectedBanner() {
         // check for existing banner
         if let existingBanner = self.errorBanner {
             existingBanner.dismiss()
@@ -178,7 +355,7 @@ class EquityDetailsViewController: UIViewController {
         self.errorBanner?.show(duration: nil)
     }
     
-    fileprivate func configureRangeSegmentedControl() {
+    func configureRangeSegmentedControl() {
         rangeSegmentedControl.delegate = self
         rangeSegmentedControl.segmentTitle = ["1d", "3m", "1y", "5y"]
         rangeSegmentedControl.backgroundColor = UIColor.clear
@@ -193,7 +370,7 @@ class EquityDetailsViewController: UIViewController {
         }
     }
     
-    fileprivate func configureChartView() {
+    func configureChartView() {
         // to add loading
         lineChartView.noDataText = "Loading data..."
         lineChartView.chartDescription?.text = ""
@@ -202,16 +379,16 @@ class EquityDetailsViewController: UIViewController {
         lineChartView.setScaleEnabled(true)
         lineChartView.pinchZoomEnabled = true
         lineChartView.drawGridBackgroundEnabled = false
-        lineChartView.rightAxis.enabled = false
-        lineChartView.leftAxis.drawLabelsEnabled = true
-        lineChartView.leftAxis.drawGridLinesEnabled = false
-        lineChartView.leftAxis.labelTextColor = ColorScheme.chartLeftAxisTextColor
-        lineChartView.leftAxis.drawAxisLineEnabled = false
+        lineChartView.leftAxis.enabled = false
+        lineChartView.rightAxis.drawLabelsEnabled = true
+        lineChartView.rightAxis.drawGridLinesEnabled = false
+        lineChartView.rightAxis.labelTextColor = ColorScheme.yAxisTextColor
+        lineChartView.rightAxis.drawAxisLineEnabled = false
         lineChartView.xAxis.enabled = false
         lineChartView.legend.enabled = false
     }
     
-    fileprivate func setupChart(range: ChartRange, chartpoints: [EquityChartpoint]) {
+    func setupChart(range: ChartRange, chartpoints: [Chartpoint]) {
         // set data
         var xValues = [String]()
         var yValues = [Double]()
@@ -228,10 +405,16 @@ class EquityDetailsViewController: UIViewController {
             let y = point.close
             yValues.append(y!)
         }
-        createChart(yValues, xVals: xValues)
+        
+        if xValues.count == yValues.count {
+            createChart(yValues, xVals: xValues)
+        } else {
+            lineChartView.noDataText = "No Chart Available."
+            presentAlertMessage(title: "Chart Error", message: "Problem fetching data from the server. Please try again later.")
+        }
     }
     
-    fileprivate func createChart(_ values: [Double], xVals: [String]) {
+    func createChart(_ values: [Double], xVals: [String]) {
         if(xVals.count == 0) {
             lineChartView.clear()
             lineChartView.clearValues()
@@ -294,8 +477,8 @@ class EquityDetailsViewController: UIViewController {
         
         self.lineChartView.xAxis.valueFormatter = xAxis.valueFormatter
         self.lineChartView.xAxis.labelPosition = .bottom
-        self.lineChartView.animate(xAxisDuration: 2.0,
-                                   yAxisDuration: 2.0,
+        self.lineChartView.animate(xAxisDuration: 1.0,
+                                   yAxisDuration: 1.0,
                                    easingOption: .easeInOutQuint)
     }
     
@@ -303,45 +486,52 @@ class EquityDetailsViewController: UIViewController {
         self.tableView?.reloadData()
     }
     
+    @objc fileprivate func addButtonPressed(_ sender: UIBarButtonItem) {
+        // update UserDefaults' Tickers
+        let ticker = equitySymbol
+        var symbols = UserDefaultsManagement.getTickers()
+        
+        isAdded = !isAdded
+        if isAdded {
+            addButton?.setImage(UIImage(named: ImageView.check), for: .normal)
+            symbols.append(ticker)
+            UserDefaultsManagement.saveTickers(tickers: symbols)
+        } else {
+            addButton?.setImage(UIImage(named: ImageView.add), for: .normal)
+            if symbols.contains(ticker) {
+                UserDefaultsManagement.deleteTicker(ticker: ticker)
+            }
+        }
+    }
+    
     //  MARK: Network Call Methods
     
-    fileprivate func networkCall(range: ChartRange, symbol: String) {
-        EquityNetworkManager.requestEquityChartData(symbol: symbol, range: range, onSuccess: { chartpts in
+    func networkCall(range: ChartRange, symbol: String) {
+        EquityNetworkManager.requestChartData(symbol: symbol, range: range, onSuccess: { chartpts in
             self.setupChart(range: range, chartpoints: chartpts)
-            // to do: pantry save?
         }, onError: { error in
             print("Chart Error: \(error.localizedDescription)")
             self.handleLoadEquityDetailsError(error)
-            // unpack pantry?
         })
     }
     
-    fileprivate func fetchNewsFeed(symbol: String) {
-        EquityNetworkManager.requestEquityNewsFeedData(symbol: symbol, onSuccess: { feeds in
+    func fetchNewsFeed(symbol: String) {
+        EquityNetworkManager.requestNewsFeedData(symbol: symbol, onSuccess: { feeds in
             self.newsFeed = feeds
-            // to do: pantry save?
         }, onError: { error in
             print("Feed Error: \(error.localizedDescription)")
             self.handleLoadEquityDetailsError(error)
-            // unpack pantry?
+            
         })
     }
     
-    fileprivate func fetchStockTwits(symbol: String) {
-        EquityNetworkManager.requestEquityTweetData(symbol: symbol, onSuccess: { tweets in
+    func fetchStockTwits(symbol: String) {
+        EquityNetworkManager.requestTweetData(symbol: symbol, onSuccess: { tweets in
             self.tweets = tweets
-            // to do: pantry save
         }, onError: { error in
             print("Tweet Error: \(error.localizedDescription)")
             self.handleLoadEquityDetailsError(error)
-            // unpack pantry?
         })
-    }
-    
-    // To Do Later
-    fileprivate func fileNameForPantry(symbol: String?) -> String? {
-        guard let symbol = symbol else { return nil }
-        return "\(symbol)Storage"
     }
     
     // MARK: Navigation
@@ -368,130 +558,9 @@ class EquityDetailsViewController: UIViewController {
         static let TweetSegue = "showTweet"
     }
     
-}
-
-extension EquityDetailsViewController: UICollectionViewDelegate { }
-
-extension EquityDetailsViewController: UICollectionViewDataSource {
-    
-    func numberOfSections(in collectionView: UICollectionView) -> Int {
-        return 1
+    private struct ImageView {
+        static let check = "navCheck"
+        static let add = "navAdd"
     }
     
-    func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return 12
-    }
-    
-    func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        if let cell = collectionView.dequeueReusableCell(withReuseIdentifier: EquityDetailsCollectionViewCell.identifier, for: indexPath) as? EquityDetailsCollectionViewCell {
-            if let equity = equityDetails {
-                cell.configureItem(indexPath: indexPath.row, item: equity)
-            }
-            return cell
-        }
-        return UICollectionViewCell()
-    }
-}
-
-extension EquityDetailsViewController: UITableViewDelegate { }
-
-extension EquityDetailsViewController: UITableViewDataSource {
-    
-    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        if feedsSegmentedControl.selectedSegmentIndex == 0 {
-            return newsFeed.count
-        }
-        else if feedsSegmentedControl.selectedSegmentIndex == 1 {
-            return tweets.count
-        }
-        return 0
-    }
-    
-    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        if let cell = tableView.dequeueReusableCell(withIdentifier: EquityFeedDetailsCell.identifier, for: indexPath) as? EquityFeedDetailsCell {
-            
-            if feedsSegmentedControl.selectedSegmentIndex == 0 {
-                cell.headingLabel.text = newsFeed[indexPath.row].currentTitle
-                cell.detailsLabel.text = newsFeed[indexPath.row].sincePublishDate
-            }
-            else if feedsSegmentedControl.selectedSegmentIndex == 1 {
-                cell.headingLabel.text = tweets[indexPath.row].tweet
-                cell.detailsLabel.text = "by \(tweets[indexPath.row].userName!), \(tweets[indexPath.row].sinceCreated!)"
-            }
-            return cell
-        }
-        return UITableViewCell()
-    }
-    
-    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        switch feedsSegmentedControl.selectedSegmentIndex {
-            case 0:
-                let feed = self.newsFeed[indexPath.row]
-                let urlString = feed.currentLink
-                let url = URL(string: urlString)
-                
-                let safariViewController = SFSafariViewController(url: url!)
-                safariViewController.title = feed.currentTitle
-                self.navigationController?.pushViewController(safariViewController, animated: true)
-            case 1:
-                self.performSegue(withIdentifier: Storyboard.TweetSegue, sender: self)
-            default:
-                break
-        }
-    }
-}
-
-extension EquityDetailsViewController: EquityDetailsViewControllerModelDelegate {
-    func didReceiveDataUpdate(data: EquityDetails) {
-        self.equityDetails = data
-    }
-    
-    func didFailDataUpdateWithError(error: Error) {
-        // handle error with display alert
-        handleLoadEquityDetailsError(error)
-    }
-}
-
-extension EquityDetailsViewController: XMSegmentedControlDelegate {
-    func xmSegmentedControl(_ xmSegmentedControl: XMSegmentedControl, selectedSegment: Int) {
-        var range: ChartRange = .OneDay
-        
-        switch selectedSegment {
-            case 0: range = .OneDay
-            case 1: range = .ThreeMonth
-            case 2: range = .OneYear
-            case 3: range = .FiveYear
-                
-            default: range = .OneDay
-        }
-        chartRangeDelegate.didChangeTimeRange(range)
-    }
-}
-
-extension EquityDetailsViewController: ChartViewRangeDelegate {
-    func didChangeTimeRange(_ range: ChartRange) {
-        networkCall(range: range, symbol: (selectedEquity?.symbol)!)
-    }
-}
-
-extension EquityDetailsViewController: ChartViewDelegate {
-    func chartValueSelected(_ chartView: ChartViewBase, entry: ChartDataEntry, highlight: Highlight) {
-//        lineChartView.highlightValue(highlight)
-    }
-    
-    func chartValueNothingSelected(_ chartView: ChartViewBase) {
-        print("chart Value Nothing Selected")
-    }
-}
-
-extension EquityDetailsViewController {
-    
-    // MARK: Helper
-    
-    func presentAlertMessage(title: String, message: String) -> Void {
-        let alert = CDAlertView(title: title, message: message, type: .error)
-        let action = CDAlertViewAction(title: "OK")
-        alert.add(action: action)
-        alert.show()
-    }
 }

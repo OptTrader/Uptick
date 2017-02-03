@@ -17,20 +17,37 @@
                         <viewControllerLayoutGuide type="top" id="Llm-lL-Icb"/>
                         <viewControllerLayoutGuide type="bottom" id="xb3-aO-Qok"/>
                     </layoutGuides>
-                    <view key="view" contentMode="scaleToFill" id="Ze5-6b-2t3">
+                    <view key="view" clipsSubviews="YES" contentMode="scaleToFill" id="Ze5-6b-2t3">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="LaunchPage" translatesAutoresizingMaskIntoConstraints="NO" id="la8-Sx-jwV">
-                                <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
-                            </imageView>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="center" spacing="5" translatesAutoresizingMaskIntoConstraints="NO" id="X8S-3Z-01h">
+                                <rect key="frame" x="97.5" y="214" width="180" height="239.5"/>
+                                <subviews>
+                                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="logo" translatesAutoresizingMaskIntoConstraints="NO" id="Z9N-a3-KyW">
+                                        <rect key="frame" x="0.0" y="0.0" width="180" height="166"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" constant="180" id="6XT-ca-ryF"/>
+                                            <constraint firstAttribute="height" constant="166" id="fTm-TY-XD1"/>
+                                        </constraints>
+                                    </imageView>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Uptick" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Dpm-CY-hX3">
+                                        <rect key="frame" x="17" y="171" width="146.5" height="68.5"/>
+                                        <fontDescription key="fontDescription" name="AvenirNext-Regular" family="Avenir Next" pointSize="50"/>
+                                        <color key="textColor" red="0.0" green="0.71372549019607845" blue="0.90980392156862744" alpha="1" colorSpace="calibratedRGB"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                </subviews>
+                                <constraints>
+                                    <constraint firstItem="Dpm-CY-hX3" firstAttribute="top" secondItem="Z9N-a3-KyW" secondAttribute="bottom" constant="5" id="EWh-gf-Uef"/>
+                                    <constraint firstItem="Z9N-a3-KyW" firstAttribute="top" secondItem="X8S-3Z-01h" secondAttribute="top" id="QIm-ei-87e"/>
+                                </constraints>
+                            </stackView>
                         </subviews>
-                        <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <color key="backgroundColor" red="0.0039215686274509803" green="0.035294117647058823" blue="0.058823529411764705" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
-                            <constraint firstItem="la8-Sx-jwV" firstAttribute="leading" secondItem="Ze5-6b-2t3" secondAttribute="leading" id="Iiz-Du-Cwh"/>
-                            <constraint firstItem="la8-Sx-jwV" firstAttribute="top" secondItem="Ze5-6b-2t3" secondAttribute="top" id="aKK-CN-zj2"/>
-                            <constraint firstItem="xb3-aO-Qok" firstAttribute="top" secondItem="la8-Sx-jwV" secondAttribute="bottom" id="bQP-68-W9e"/>
-                            <constraint firstAttribute="trailing" secondItem="la8-Sx-jwV" secondAttribute="trailing" id="fln-lx-83r"/>
+                            <constraint firstItem="X8S-3Z-01h" firstAttribute="centerY" secondItem="Ze5-6b-2t3" secondAttribute="centerY" id="Fvf-NM-mIO"/>
+                            <constraint firstItem="X8S-3Z-01h" firstAttribute="centerX" secondItem="Ze5-6b-2t3" secondAttribute="centerX" id="PyS-nd-yBW"/>
                         </constraints>
                     </view>
                 </viewController>
@@ -40,6 +57,6 @@
         </scene>
     </scenes>
     <resources>
-        <image name="LaunchPage" width="375" height="667"/>
+        <image name="logo" width="683" height="628"/>
     </resources>
 </document>

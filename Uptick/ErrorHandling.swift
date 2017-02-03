@@ -8,6 +8,8 @@
 
 import Foundation
 
+typealias ErrorCallback = (Error) -> Void
+
 enum APIManagerError: Error {
     case network(error: Error)
     case apiProvidedError(reason: String)

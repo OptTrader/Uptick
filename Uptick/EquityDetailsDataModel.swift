@@ -18,7 +18,7 @@ class EquityDetailsDataModel: NSObject {
     weak var delegate: EquityDetailsViewControllerModelDelegate?
     
     func requestData(stockSymbol: String) {
-        SwiftSpinner.show(delay: 2.0, title: "Fetching Stock Details")
+        SwiftSpinner.show(delay: 2.0, title: "Fetching Data")
         EquityNetworkManager.requestEquityDetailsData(symbol: stockSymbol, onSuccess: { data in
             self.setDataWithResponse(response: data)
             SwiftSpinner.hide()
