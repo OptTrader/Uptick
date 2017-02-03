@@ -40,13 +40,14 @@ class EquityDetailsCollectionViewCell: UICollectionViewCell {
             case 3:
                 fieldLabel?.text = "Volume"
                 // REFORMAT VOLUME UNDER AND OVER 1MM??
-                valueLabel?.text = Formatters.sharedInstance.stringFromInt(int: item.volume) ?? "0.0"
+                valueLabel?.text = Formatters.sharedInstance.stringFromInt(int: item.currentVolume) ?? "0.0"
             case 4:
                 fieldLabel?.text = "High"
                 valueLabel?.text = Formatters.sharedInstance.stringFromNumber(number: item.dailyHigh) ?? "0.0"
             case 5:
                 fieldLabel?.text = "% Avg Vol."
-                valueLabel?.text = Formatters.sharedInstance.stringFromPercent(percent: item.percentOfAverageVolume) ?? "0.0%"
+            valueLabel?.text = "TEMP"
+//                valueLabel?.text = Formatters.sharedInstance.stringFromPercent(percent: item.percen) ?? "0.0%"
             case 6:
                 fieldLabel?.text = "Low"
                 valueLabel?.text = Formatters.sharedInstance.stringFromNumber(number: item.dailyLow) ?? "0.0"
