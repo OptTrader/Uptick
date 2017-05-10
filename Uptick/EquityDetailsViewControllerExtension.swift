@@ -81,8 +81,8 @@ extension EquityDetailsViewController: EquityDetailsViewControllerModelDelegate 
     }
     
     func didFailDataUpdateWithError(error: Error) {
-        // handle error with display alert
         handleLoadEquityDetailsError(error)
+        presentAlertMessage(title: "Server Error", message: "Problem with fetching data from server. Please try again later.")
     }
 }
 

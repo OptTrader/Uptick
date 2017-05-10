@@ -61,12 +61,12 @@ class MainEquityCell: UITableViewCell {
         let change = item.changeInPrice ?? 0.0
         
         switch change {
-        case _ where change > 0.0:
-            return priceInformationView.backgroundColor = ColorScheme.uptickViewColor
-        case _ where change < 0.0:
-            return priceInformationView.backgroundColor = ColorScheme.downtickViewColor
-        default:
-            return priceInformationView.backgroundColor = ColorScheme.flatTradeViewColor
+            case _ where change > 0.0:
+                return priceInformationView.backgroundColor = ColorScheme.uptickViewColor
+            case _ where change < 0.0:
+                return priceInformationView.backgroundColor = ColorScheme.downtickViewColor
+            default:
+                return priceInformationView.backgroundColor = ColorScheme.flatTradeViewColor
         }
     }
     

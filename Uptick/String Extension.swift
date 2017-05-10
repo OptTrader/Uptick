@@ -12,12 +12,15 @@ import UIKit
 extension String {
     func encodeUrl() -> String {
         return self.addingPercentEncoding(withAllowedCharacters: CharacterSet.urlHostAllowed)!
-//        return self.addingPercentEncoding(CharacterSet.urlHostAllowed)!
+    }
+    
+    func decodeUrl() -> String
+    {
+        return self.removingPercentEncoding!
     }
     
     func removeSlashCharacter() -> String {
         return self.replacingOccurrences(of: "/", with: "")
-//         return self.replacingOccurrences(of: "/", with: "")
     }
     
     static func formatDefaultLabel(text: String, spacing: CGFloat) -> NSMutableAttributedString {

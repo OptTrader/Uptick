@@ -240,6 +240,7 @@ extension EquityDashboardTableViewController: EquityViewControllerModelDelegate 
     
     func didFailDataUpdateWithError(error: Error) {
         handleLoadEquitiesError(error)
+        presentAlertMessage(title: "Server Error", message: "Problem with fetching data from server. Please try again later.")
     }
 }
 

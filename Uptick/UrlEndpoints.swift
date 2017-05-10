@@ -4,7 +4,7 @@
 //
 //  Created by Chris Kong on 1/24/17.
 //  Copyright © 2017 Chris Kong. All rights reserved.
-//
+//  http://stackoverflow.com/questions/14795726/getting-data-from-yahoo-finance
 
 import Foundation
 
@@ -15,7 +15,9 @@ class UrlEndpoints {
     class func endpointForMultiQuotes(symbols: Array<String>) -> String {
 
         let symbolsString: String = symbols.joined(separator: "\", \"")
-        let query = "select * from yahoo.finance.quotes where symbol in (\"\(symbolsString) \")&format=json&env=http://datatables.org/alltables.env"
+
+        let query = "select * from yahoo.finance.quotes where symbol in (\"\(symbolsString) \")&format=json&diagnostics=true&env=store://datatables.org/alltableswithkeys&callback="
+//                let query = "select * from yahoo.finance.quotes where symbol in (\"\(symbolsString) \")&format=json&env=http://datatables.org/alltables.env"
         let encodedQuery = query.encodeUrl()
         
         let endpoint = "https://query.yahooapis.com/v1/public/yql?q=" + encodedQuery
@@ -25,7 +27,8 @@ class UrlEndpoints {
     // MARK: Single Asset Endpoint
     
     class func endpointForAssetDetails(symbol: String) -> String {
-        let query = "select * from yahoo.finance.quotes where symbol in (\"\(symbol) \")&format=json&env=http://datatables.org/alltables.env"
+                let query = "select * from yahoo.finance.quotes where symbol in (\"\(symbol) \")&format=json&diagnostics=true&env=store://datatables.org/alltableswithkeys&callback="
+//        let query = "select * from yahoo.finance.quotes where symbol in (\"\(symbol) \")&format=json&env=http://datatables.org/alltables.env"
         let encodedQuery = query.encodeUrl()
         
         let endpoint = "https://query.yahooapis.com/v1/public/yql?q=" + encodedQuery

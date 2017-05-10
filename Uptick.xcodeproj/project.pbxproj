@@ -33,8 +33,6 @@
 		7A7D19E51E441B15005E90FE /* KDCircularProgress.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A7D19E41E441B15005E90FE /* KDCircularProgress.swift */; };
 		7A7D19E71E441C42005E90FE /* BottomAlignedLabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A7D19E61E441C42005E90FE /* BottomAlignedLabel.swift */; };
 		7A7D19EB1E442376005E90FE /* EquityDetailsViewControllerExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A7D19EA1E442375005E90FE /* EquityDetailsViewControllerExtension.swift */; };
-		7A7D19ED1E442645005E90FE /* Temppp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A7D19EC1E442645005E90FE /* Temppp.swift */; };
-		7AAF1A871E308EF400467310 /* UILabel Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7AAF1A861E308EF400467310 /* UILabel Extension.swift */; };
 		7AAF1A891E31CE3B00467310 /* CAPSPageMenu.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7AAF1A881E31CE3B00467310 /* CAPSPageMenu.swift */; };
 		7AAF1A8B1E31D3E100467310 /* MenuPagesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7AAF1A8A1E31D3E000467310 /* MenuPagesViewController.swift */; };
 		7AAF1A8D1E31D54A00467310 /* IndicesTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7AAF1A8C1E31D54A00467310 /* IndicesTableViewController.swift */; };
@@ -105,8 +103,6 @@
 		7A7D19E41E441B15005E90FE /* KDCircularProgress.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = KDCircularProgress.swift; sourceTree = "<group>"; };
 		7A7D19E61E441C42005E90FE /* BottomAlignedLabel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BottomAlignedLabel.swift; sourceTree = "<group>"; };
 		7A7D19EA1E442375005E90FE /* EquityDetailsViewControllerExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EquityDetailsViewControllerExtension.swift; sourceTree = "<group>"; };
-		7A7D19EC1E442645005E90FE /* Temppp.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Temppp.swift; sourceTree = "<group>"; };
-		7AAF1A861E308EF400467310 /* UILabel Extension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UILabel Extension.swift"; sourceTree = "<group>"; };
 		7AAF1A881E31CE3B00467310 /* CAPSPageMenu.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CAPSPageMenu.swift; sourceTree = "<group>"; };
 		7AAF1A8A1E31D3E000467310 /* MenuPagesViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MenuPagesViewController.swift; sourceTree = "<group>"; };
 		7AAF1A8C1E31D54A00467310 /* IndicesTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = IndicesTableViewController.swift; sourceTree = "<group>"; };
@@ -280,7 +276,6 @@
 				7AE19BFC1E07A2D4009A6DF1 /* ChartFormatter.swift */,
 				7A0EE6F91E0C281C00C8830E /* ColorScheme.swift */,
 				7AE19C3E1E0925A0009A6DF1 /* UIImage Extension.swift */,
-				7AAF1A861E308EF400467310 /* UILabel Extension.swift */,
 				7A296A9A1E373FCE007E445A /* String Extension.swift */,
 				7A7D19E61E441C42005E90FE /* BottomAlignedLabel.swift */,
 			);
@@ -293,7 +288,6 @@
 				7ADE87E51E079DB100518A91 /* LaunchScreen.storyboard */,
 				7ADE87E01E079DB100518A91 /* Main.storyboard */,
 				7ADE87DC1E079DB100518A91 /* AppDelegate.swift */,
-				7A7D19EC1E442645005E90FE /* Temppp.swift */,
 				7A30CA991E248CC700B2CB61 /* SplitViewSupport.swift */,
 				7A296A861E372FC0007E445A /* WIP */,
 			);
@@ -548,7 +542,6 @@
 				7AE19C1A1E07A88A009A6DF1 /* EquityNetworkManager.swift in Sources */,
 				7A296AA21E3845A3007E445A /* Currency.swift in Sources */,
 				7AE19C251E07AC30009A6DF1 /* EquityDataModel.swift in Sources */,
-				7AAF1A871E308EF400467310 /* UILabel Extension.swift in Sources */,
 				7AE19C231E07ABEA009A6DF1 /* SearchEquityViewController.swift in Sources */,
 				7A0EE6FA1E0C281C00C8830E /* ColorScheme.swift in Sources */,
 				7A296AA41E384663007E445A /* CurrencyDetails.swift in Sources */,
@@ -583,7 +576,6 @@
 				7AE19C3C1E08CF31009A6DF1 /* StockTweetViewController.swift in Sources */,
 				7A296A911E373A3E007E445A /* ChartpointApiClientProtocol.swift in Sources */,
 				7A296AAC1E3847A0007E445A /* CurrencyApiClientProtocol.swift in Sources */,
-				7A7D19ED1E442645005E90FE /* Temppp.swift in Sources */,
 				7AAF1A8B1E31D3E100467310 /* MenuPagesViewController.swift in Sources */,
 				7AAF1A8F1E31D57C00467310 /* CurrenciesCollectionViewController.swift in Sources */,
 				7A7D19E71E441C42005E90FE /* BottomAlignedLabel.swift in Sources */,

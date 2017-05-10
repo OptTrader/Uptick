@@ -41,8 +41,6 @@ class EquityDetailsViewController: UIViewController {
         didSet {
             configureDefaultStateLeftView()
             configureDefaultStateRightView()
-            
-            // what about the rest?
         }
     }
     var newsFeed = [NewsFeed]() {
@@ -233,8 +231,6 @@ class EquityDetailsViewController: UIViewController {
         }
     }
     
-    // TO TEST!!!!
-    
     func configureSecondStateLeftView() {
         self.leftViewButton.setTitle("Market Cap", for: .normal)
         if (equityDetails?.marketCap != nil) && (equityDetails?.priceEarningsRatio != nil) && (equityDetails?.dividendYield != nil) {
@@ -311,9 +307,6 @@ class EquityDetailsViewController: UIViewController {
             circularProgressView.angle = 0.0
         }
     }
-    
-    
-    
     
     // Network Error
     
